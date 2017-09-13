@@ -1,0 +1,538 @@
+BORRADOR
+
+a) Título (en inglés y en español) 
+b) Resumen (en español y en inglés: Abstract) 
+c) Agradecimientos 
+d) Tabla de contenidos 
+e) Lista de figuras y tablas (opcional) 
+f) Parte 1. Introducción y conocimientos previos 
+a. Capítulo 1.- Introducción. Motivación. Objetivos. 
+b. Capítulo 2.- Descripción de los IDSs (snort y suricata)
+c. Capítulo 3.- Ataques
+d. Capítulo 3.- Pruebas de detección
+e. Elección del IDS, motivación
+b. Capítulo 2.- Conocimientos previos 
+c. Capítulo 3.- Descripción del problema 
+g) Parte 2. Trabajo desarrollado. 
+a. Capítulo 4.- Teoría 
+b. Capitulo 5.- Descripción del método de resolución del problema 
+c. Capítulo 6.- Análisis de resultados 
+h) Parte 3. Finalización 
+a. Capitulo 7.- Trabajos relacionados 
+b. Capitulo 8.- Presupuesto económico 
+c. Capítulo 9.- Consideraciones finales, conclusiones y recomendaciones y futuros trabajos/mejoras. 
+i) Bibliografía y referencias 
+j) Apéndices
+
+Sistema de desvío de intrusiones de red hacia honeynets dinámicas virtuales
+
+INTRODUCCIÓN
+- Describir el problema
+- Introducir los ids
+- Tipos y como se encuentran actualmente
+
+La llegada de Internet y su extensión en todo tipo de ámbitos ha supuesto, además de un gran avance, la introducción de ciertos riesgos y vulnerabilidades, antes inexistentes. A día de hoy resulta inconcebible que una empresa de cierto tamaño no cuente con una red de comunicaciones o utilice Internet para llevar a cabo gran parte de su actividad. Las facilidades que esta apertura al exterior puede proporcionar se contraponen con los ataques que estas organizaciones son susceptibles de sufrir. Pese a que existen soluciones que tratan de garantizar la seguridad y que únicamente los usuarios autorizados accedan a los recursos, dichas soluciones no resultan infalibles y dependen, además, de tareas de mantenimiento que están sujetas a fallos u olvidos. Es ahi donde entran en juego los sistemas de detección de intrusiones [1]. Una vez que el atacante ha traspasado las medidas de prevención resulta esencial detectarlo por las siguientes razones:
+- Cuanto antes se localice la intrusión, antes se pueden tomar medidas al respecto y, por lo tanto, menor será el daño causado por el ataque.
+- De la misma manera que un sistema de alarmas instalado en una casa puede disuadir a ladrones a la hora de perpetrar un robo, un IDS también puede frenar posibles ataques.
+- La detección de ataques proporciona una gran cantidad de información sobre las estrategias empleadas por los atacantes, y contribuyen a solventar vulnerabilidades del sistema de prevención.
+
+En un paso previo a la descripción de los sistemas de detección de intrusiones, a continuación se explican los riesgos y los distintos ataques que puede sufrir un sistema. Dejando al margen los virus, que junto con las intrusiones representan los ataques más comunes, podrían distinguirse distintos tipos de intrusos [2]:
+- Impostor: en este caso el intruso entra en el sistema bajo la identidad de un usuario legitimo y hace uso de los recursos de dicha cuenta.
+- Usuario negligente: un usuario legitimo del sistema utiliza de manera errónea o abusiva los recursos a los que tiene acceso, ya sean datos o programas.
+- Usuario clandestino. Se trata de un atacante que intenta apropiarse de los privilegios del administrador o superusuario. Bajo la identidad del administrador el atacante puede, además, eludir controles de acceso o el registro de sus actividades.
+
+
+
+SNORT
+Snort se trata de un software gratuito y de código abierto desarrollado en 1998 por Martin Roesch. Desde su aparición, ha ido mejorando y extendiéndose, encontrándose consolidado como uno de los IDSs open source más potentes y eficaces. En la actualidad el proyecto se encuentra a cargo de la empresa Sourcefire, creada también por Martin Roesch, y que fue comprada por Cisco en 2013. Pese al desarrollo de una versión comercial, Sourcefire 3D System, Snort sigue adelante respaldado por una amplia comunidad. 
+
+En lo que respecta a las funcionalidades de Snort, es posible distinguir tres modos de funcionamiento distinto:
+- sniffer: En este modo, Snort lee los paquetes que atraviesan la red y los muestra por pantalla.
+- Logger de paquetes: loguea o registra los paquetes en disco.
+- NIDS (Network Intrusion Detection System). Cuando funciona en este modo, Snort lleva a cabo tareas de análisis y detección del tráfico de la red. Este modo ofrece multitud de opciones de configuración, lo que puede suponer cierta dificultad.
+
+Arquitectura de snort
+Las distintas funcionalidades descritas anteriormente se implementan a través de una serie de plugins que presenta la arquitectura modular del sistema. Snort consta de un núcleo o core con 4 módulos:
+
+
+- Snifador de paquetes: este plugin permite escuchar el tráfico que viaja a través de la red, siendo incluso posible almacenar los paquetes capturados para su posterior lectura
+- Decodificador: identifica los protocolos que encapsula el paquete desde el nivel de capa de enlace hasta los niveles TCP/IP. Los paquetes atraviesan por lo tanto una cascada de decodificadores hasta que su contenido queda guardado en estructuras de datos según sus correspondientes campos. De esta manera el contenido de los paquetes queda preparado para ser tratado por los preprocesadores.
+- Preprocesador: El preprocesador de snort engloba una serie de plugins o módulos encargados de diversas tareas que facilitan y aceleran la detección en el siguiente módulo (motor de detección) al realizarse el matching con las reglas. Se puede variar el número de preprocesadores que los paquetes han de atravesar, variando con ello también el tiempo total de procesamiento, lo que resulta fundamental a la hora de determinar la eficacia de snort.
+Entre las funciones que pueden realizar los preprocesadores se encuentran:
+
+	- Detección de anomalías. Consiste en determinar si el contenido de un paquete se ajusta a lo que corresponde con los protocolos que lo encapsulan.
+	- Agregación de sesiones TCP. Este preprocesador recoge los datos de una sesión TCP, agrupándolos de manera que posteriormente sean evaluados y analizados en su conjunto. Esto se debe a que gran parte de los ataques suelen llegar en distintos fragmentos, de manera que serían indetectables si fuesen estudiados por separado.
+	- Ensamblado de fragmentos IP. De manera similar a lo que ocurría con las sesiones TCP, los paquetes IP pueden sufrir fragmentaciones debido a las limitaciones de la red, en concreto al MTU (Maximum Transfer Unit) que determina el tamaño máximo de un paquete para que pueda atravesar un enlace. De esta manera resulta posible que un ataque quede enmascarado en varios fragmentos y no genere ninguna alerta.
+	- Detección de escaneo de puertos. Resulta muy difícil detectar un escaneo de puertos haciendo uso únicamente de reglas, pues hay que tener en cuenta que para realizarlo se envían paquetes a distintos hosts y puertos, en conexiones distintas. Por otro lado, existen ciertos paquetes que no cumplen las especificaciones y denotan que se esta llevando a cabo este tipo de ataque. Es el caso de un paquete NULL.
+
+[4]
+
+- Motor de detección. Este módulo se encarga de procesar los paquetes procedentes del preprocesador. Para ello utiliza una serie de reglas contra las que analiza los paquetes. En caso de encajar, son enviados al procesador de alertas.
+El sistema de reglas empleado por Snort se basa en la detección mediante firmas o signatures. Este método de detección se basa en comparar los datos de los paquetes como cadenas con ciertos patrones conocidos de ataques. A esta comparativa las reglas de snort añaden la posiblidad de generar expresiones de manera que se produzca una coincidencia solo bajo determinadas circunstancias. Con todo ello, este sistema resulta extremadamente rápido (gracias a la detección mediante patrones) y fiable, pues el hecho de fijar determinados parámetros permite reducir el número de falsos positivos (alertas generadas por paquetes que no constituyen ningún ataque).
+
+- Módulo de alertas y logs. Este componente se encarga de gestionar los paquetes que hayan coincidido con alguna regla. Existen multitud de posibilidades a la hora de tratar las alertas y logs generados. Por ejemplo, se pueden guardar las alertas en ficheros en máquinas remotas haciendo uso de sockets Unix o mostrar la información referente a los logs en interfaces web. Todo ello requiere el empleo de plugins adicionales, al igual que ocurría con los preprocesadores.
+
+[3] [4]
+
+REGLAS DE SNORT
+
+Las reglas de snort constituyen la clave del sistema, encontrándose agrupadas en función del tipo de ataque que detectan. Existen ya numeras reglas en el proyecto, que pueden añadirse a Snort con un simple include en el fichero de configuración. Pese a ello, la sintaxis simple y descriptiva del lenguaje que emplean estas reglas permite que cualquier usuario pueda escribir sus propias reglas, una vez se haya familiarizado con esta.
+Las reglas constan de dos partes:
+- Header o cabecera. Esta primera parte contiene la acción a realizar en caso de que la regla coincida, así como, las direcciones IP y puertos, tanto de origen como destino.
+- Opciones. Esta segunda parte, incluye el mensaje que ha de mostrarse en la alerta y otros parámetros adicionales, como las partes del paquete que han de evaluarse para determinar si se cumple la regla o no.
+
+
+SURICATA
+
+
+
+Ataques frecuentes 
+
+Escaneo de puertos 
+Esta técnica no resulta un ataque de por sí, pues puede ser empleada también por ciertos usuarios, tales como administradores, para comprobar el estado de los puertos y servicios de una determinada máquina. No obstante, es también una etapa fundamental en el estudio previo a la realización de un ataque. Existen multitud de herramientas que permiten llevar a cabo esta tarea, destancando entre ellas, nmap (network mapper).
+Nmap es una utilidad de código abierto distribuido con una licencia GNU General Public License, que permite, además de realizar escaneos de puertos, la detección de otras características como el sistema operativo o la versión de los servicios. Además de ser flexible y proporcionar diferentes opciones a la hora de configurar el escaneo, resulta también muy potente y puede emplearse tanto a nivel de un único host objetivo como de una red de máquinas. 
+
+Opciones de escaneos
+Por lo general, al ejecutar el comando nmap se lanza un ping contra el objetivo, para comprobar que está disponible y, a continuación, se envían una serie de paquetes. En función de cómo sean estos paquetes se distinguen dos tipos de escaneo:
+- Escaneo non stealth
+	Se trata de un tipo de escaneo de fácil detección, pues emplea métodos de conexión TCP, ya sea realizando el típico three-way handshake completo o sin el tercer paquete. Este escaneo es el que suelen realizar los administradores de red para realizar sus funciones.
+- Escaneo stealth
+	Se envían paquetes con unos determinados flags activados de manera que pueda determinarse el estado de los puertos de manera eficaz. Algunos de las combinaciones de flags que pueden utilizarse son F (Fin), Syn/ack, xmas tree (FIN, URG, PSH) o Null (sin flag). En todos estos casos un puerto cerrado responde con un reset (RST), mientras que uno abierto no responde. Debido a que no se establece una conexión TCP convencional, este escaneo resulta más dificil de detectar, por lo que es el que emplearía un atacante. Para realizar este escaneo, resulta necesario contar con permisos de administrador para poder generar este tipo de paquetes.
+
+Pruebas de escaneo de puertos
+Se ha realizado el siguiente escaneo desde la máquina atacante kali linux
+	nmap -A -T4 192.168.1.107
+La opción -A se utiliza para perpetrar un ataque agresivo en el que, además de detectar el estado de los puertos, se determina el sistema operativo y la versión de los servicios que se encuentran escuchando en el host.
+La opción -T se utiliza para establecer un esquema de tiempos. En función del valor que se le de a esta opción se utilizará un mayor o menor ancho de banda, siendo así más sencillo de detectar o no. Un valor de 4 se corresponde con una plantilla temporal agresiva, enviándose los sondeos a una velocidad elevada. 
+A continuación, tras las opciones, se especifica la dirección IP del host objetivo.
+Antes de empezar con la detección se han realizado dos escaneos; uno, estando el firewall del host objetivo habilitado y otro, con él deshabilitado:
+
+- Firewalld activo
+
+Starting Nmap 7.25BETA2 ( https://nmap.org ) at 2017-07-16 12:42 EDT
+Nmap scan report for 192.168.1.107
+Host is up (0.011s latency).
+Not shown: 993 filtered ports
+PORT     STATE  SERVICE        VERSION
+22/tcp   open   ssh            OpenSSH 6.6.1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 5e:7e:13:2a:60:9f:1e:9b:ba:ce:d6:bb:2f:11:0a:5b (RSA)
+|_  256 95:b9:cb:7b:11:cc:20:4b:d9:3b:bb:2b:7c:63:67:73 (ECDSA)
+1038/tcp closed mtqp
+1216/tcp closed etebac5
+3527/tcp closed beserver-msg-q
+5550/tcp closed sdadmind
+5631/tcp closed pcanywheredata
+6004/tcp closed X11:4
+Aggressive OS guesses: Actiontec MI424WR-GEN3I WAP (96%), DD-WRT v24-sp2 (Linux 2.4.37) (96%), Linux 3.2 (95%), Microsoft Windows 7 or Windows Server 2012 (92%), Microsoft Windows XP SP3 (90%), BlueArc Titan 2100 NAS device (88%), VMware Player virtual NAT device (86%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   1.09 ms 192.168.225.2
+2   1.03 ms 192.168.1.107
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 48.40 seconds
+
+- Firewalld inactivo
+
+Starting Nmap 7.25BETA2 ( https://nmap.org ) at 2017-07-16 12:45 EDT
+Nmap scan report for 192.168.1.107
+Host is up (0.0020s latency).
+Not shown: 997 closed ports
+PORT    STATE SERVICE VERSION
+22/tcp  open  ssh     OpenSSH 6.6.1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 5e:7e:13:2a:60:9f:1e:9b:ba:ce:d6:bb:2f:11:0a:5b (RSA)
+|_  256 95:b9:cb:7b:11:cc:20:4b:d9:3b:bb:2b:7c:63:67:73 (ECDSA)
+80/tcp  open  http    Apache httpd 2.4.6 ((CentOS))
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/2.4.6 (CentOS)
+|_http-title: Apache HTTP Server Test Page powered by CentOS
+111/tcp open  rpcbind 2-4 (RPC #100000)
+| rpcinfo: 
+|   program version   port/proto  service
+|   100000  2,3,4        111/tcp  rpcbind
+|_  100000  2,3,4        111/udp  rpcbind
+Device type: general purpose
+Running: Linux 3.X
+OS CPE: cpe:/o:linux:linux_kernel:3.2
+OS details: Linux 3.2
+Network Distance: 2 hops
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   0.22 ms 192.168.225.2
+2   0.46 ms 192.168.1.107
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 9.08 seconds
+
+Ante los resultados obtenidos, puede observarse como el firewall impedimenta la tarea de nmap, ocultando servicios abiertos, tales como tcp o http, así como la información referente al sistema operativo.
+Detección con SNORT
+Tal y como se ha explicado anteriormente, SNORT consta de varios sistemas y motores de detección. En este caso, para detectar el escaneo de puertos se utilizará el preprocesador sfportscan. Este módulo es capaz de detectar diversos tipos de escaneo, teniendo como referencia la herramienta nmap, que es la herramienta más extendida para realizarlos. 
+La detección se realiza en base al elevado número de respuestas negativas que se envían a la máquina atacante como resultado de los sondeos realizados en puertos cerrados.
+Para configurar este preprocesador añadimos la siguiente línea en el fichero de configuración de snort (/etc/snort/snort.conf), en la sección de Preprocesadores:
+
+ preprocessor sfportscan: proto  { all } memcap { 10000000 } sense_level { low } scan_type { all }  logfile { /etc/snort/scan.log }
+
+En este caso se han configurado las siguientes opciones:
+- Protocolo (proto). El protocolo que ha de analizarse: TCP, UDP, ICMP o todos, como en este caso.
+- Capacidad de memoria (memcap). Permite establecer el número de bytes que se reservarán para este preprocesador. Supone un límite para su capacidad de detección.
+- Sensibilidad (sense_level). Determina el nivel a partir del cual se generará una alerta. Hay tres opciones de sensibilidad: alta, media y baja. Es necesario elegir el nivel adecuado pues una sensibilidad alta, aunque detecte scaneos lentos también generará muchos falsos positivos, mientras que una sensibilidad baja puede no detectar ciertos escaneos.
+- Tipo de escaneo (scan_type): alerta acerca de escaneos host-to-host (portscan), escaneo de un host con una dirección suplantada (decoy_portscan), escaneo distribuido (distributed_portscan) o barrido de puerto (portsweep). Se detectará cualquiera de estos tipos.
+- Registro de logs (logfile). Se indica el fichero en el que se guardarán los logs.
+
+Teniendo en cuenta los distintos parámetros que pueden variarse, resulta de especial interés la variación de la sensibilidad para ver como afecta a la detección. Se han realizado varias pruebas:
+- Firewalld deshabilitado. Nivel de detección alto (sense_level: { high })
+
+Time: 03/16-11:14:39.930657 
+event_id: 2
+192.168.1.104 -> 192.168.1.107 (portscan) TCP Portscan
+Priority Count: 9
+Connection Count: 10
+IP Count: 1
+Scanner IP Range: 192.168.1.104:192.168.1.104
+Port/Proto Count: 10
+Port/Proto Range: 23:8888
+
+Time: 03/16-11:14:52.336172 
+event_ref: 2
+192.168.1.104 -> 192.168.1.107 (portscan) Open Port
+Open Port: 22
+
+
+- Firewalld deshabilitado. Nivel de detección alto (sense_level: { high })
+
+Time: 03/16-11:14:39.930657 
+event_id: 2
+192.168.1.104 -> 192.168.1.107 (portscan) TCP Portscan
+Priority Count: 9
+Connection Count: 10
+IP Count: 1
+Scanner IP Range: 192.168.1.104:192.168.1.104
+Port/Proto Count: 10
+Port/Proto Range: 23:8888
+
+Time: 03/16-11:14:52.336172 
+event_ref: 2
+192.168.1.104 -> 192.168.1.107 (portscan) Open Port
+Open Port: 22
+
+
+- Firewalld deshabilitado. Nivel de detección medio (sense_level: { low })
+
+Time: 03/16-12:20:14.238360 
+event_id: 2
+192.168.1.104 -> 192.168.1.107 (portscan) TCP Portscan
+Priority Count: 5
+Connection Count: 5
+IP Count: 1
+Scanner IP Range: 192.168.1.104:192.168.1.104
+Port/Proto Count: 5
+Port/Proto Range: 25:3306
+
+Time: 03/16-12:20:24.443744 
+event_ref: 2
+192.168.1.104 -> 192.168.1.107 (portscan) Open Port
+Open Port: 22
+Ataque de fuerza bruta contra el servicio ssh
+SSH (Secure Shell) es una aplicación que permite el login remoto de un usuario en el sistema y el acceso al intérprete de comandos. Para conseguir entrar en el sistema son necesarios tanto el login como clave de algún usuario, pero dada la elevada capacidad de computo de los ordenadores, puede resultar factible intentan averiguar ambos mediante prueba y error. Este tipo de ataque es lo que se conoce como ataque de fuerza bruta, pues sencillamente parte de un diccionario de logins y claves que utiliza para tratar de conectarse al puerto ssh, e iniciar una sesión. 
+La gravedad del éxito de esta intrusión varía en función del usuario, siendo extremadamente elevada para el caso del usuario con privilegios o root. Es por este motivo, que como medida de seguridad el login remoto como usuario privilegiado o root se encuentre deshabilitado en el fichero de configuración /etc/ssh/sshd.conf (opción PermitRootLogin no). 
+Existen diversas herramientas para perpetrar este tipo de ataques, de entre las que se han probado THC Hydra, Ncrack y Medusa.
+THC Hydra
+Se trata de una herramienta desarrollada por THC (The hacker's Choice) y, al igual que ocurría con nmap, es de código abierto. Es multiplataforma, se encuentra disponible para diversas plataformas y permite crackear contraseñas de diferentes servicios y protocolos. Entre los que soporta se encuentran ssh, ldap, ftp y muchos más, lo que la convierte en una de las herramientas más flexibles para testear la seguridad de contraseñas y claves. Además, es capaz de probar varias contraseñas de manera concurrente, lo que puede acelerar este ataque, cuyo punto crítico es el tiempo empleado.
+Para comprobar la detección de este tipo de ataque por los IDSs a estudiar se ha seleccionado como servicio objetivo el del SSH, permitiendo el login del usuario root. 
+Desde la máquina atacante, se ha descargado un fichero que contiene un enorme número de posibles claves sobre las que Hydra iterará y será el diccionario. Es muy sencillo encontrar ficheros de este tipo en la red, aunque en caso de no disponer de uno, Hydra también tiene una opción que permite probar todas las combinaciones de letras y números de determinadas longitudes. 
+En el fichero utilizado (password.short) se ha añadido tras la línea 91 el password del host objetivo para comprobar la eficacia del programa
+El comando a ejecutar es: 
+	hydra -l root -P password.short 192.168.1.107 ssh
+
+La opción -l especifica el usuario que se conecta, -P el path al fichero que contiene las claves a probar. Finalmente, a continuación se especifican la dirección IP y puerto, ya sea por el nombre de servicio o número de puerto, que serán atacados. 
+El resultado es el seguiente:
+Hydra v8.2 (c) 2016 by van Hauser/THC - Please do not use in military or secret service organizations, or for illegal purposes.
+
+Hydra (http://www.thc.org/thc-hydra) starting at 2017-06-12 10:48:22
+[WARNING] Many SSH configurations limit the number of parallel tasks, it is recommended to reduce the tasks: use -t 4
+[DATA] max 16 tasks per 1 server, overall 64 tasks, 91 login tries (l:1/p:91), ~0 tries per task
+[DATA] attacking service ssh on port 22
+[22][ssh] host: 192.168.1.107   login: root   password: Admin.1617
+1 of 1 target successfully completed, 1 valid password found
+Hydra (http://www.thc.org/thc-hydra) finished at 2017-06-12 10:48:31
+
+Como puede observarse, Hydra ha comprobado 92 contraseñas y encontrado la correcta en apenas 8  segundos.
+
+Ncrack
+Es, al igual que Hydra, una utilidad para crackear contraseñas y llevar a cabo auditorías de la seguridad de contraseñas en el sistema. Fue desarrollada como parte del proyecto nmap, permite la adición de nuevos módulos para el soporte de protocolos y presenta distintas opciones de configuración para permitir adaptar su ejecución a las condiciones del entorno. Esta diseñada para realizar auditorías en redes de gran tamaño, aunque también puede utilizarse contra servidores aislados.
+Otra de las opciones que permite es la de especificar un fichero de posibles logins con los que tratar de entrar en el sistema. Para llevar a cabo el estudio de esta herramienta, se establecerán los mismos parámetros que en el caso anterior, es decir, se tratará de encontrar la contraseña de root.
+El comando a ejecutar es el siguiente:
+	ncrack -p 22 --user root -P password.short 192.168.1.107
+
+Al igual que antes se especifica el usuario que se logueará, el fichero con las claves, el número de puerto del servicio y la dirección IP de la máquina.
+La ejecución del programa devuelve:
+Starting Ncrack 0.5 ( http://ncrack.org ) at 2017-06-13 10:51 EDT
+
+Discovered credentials for ssh on 192.168.1.107 22/tcp:
+192.168.1.107 22/tcp ssh: 'root' 'Admin.1617'
+
+Ncrack done: 1 service scanned in 30.04 seconds.
+
+El resultado es el mismo que al ejecutar Hydra, con la salvedad de que el tiempo empleado es mayor.
+
+Medusa
+Se trata del tercer programa empleado para el estudio. Presenta características similares a los anteriores: ejecución concurrente, soporte de multitud de protocolos, diseño modular. Entre las diferencias existentes se encuentra el empleo de threads o hilos para las tareas en paralelo en el caso de Medusa, y de procesos en Hydra.
+Ejecución de medusa:
+medusa -u root -P password.short -h 192.168.1.107 -M ssh
+
+Con la opción -u se indica el usuario, con -P el path del fichero con las contraseñas, con -h la IP del host objetivo y con -M, el módulo o servicio que será atacado.
+
+La prueba en las condiciones anteriores ha dado el siguiente resultado:
+
+Medusa v2.2 [http://www.foofus.net] (C) JoMo-Kun / Foofus Networks <jmk@foofus.net>
+
+ACCOUNT CHECK: [ssh] Host: 192.168.1.107 (1 of 1, 0 complete) User: root (1 of 1, 0 complete) Password: df12345 (1 of 91 complete)
+ACCOUNT CHECK: [ssh] Host: 192.168.1.107 (1 of 1, 0 complete) User: root (1 of 1, 0 complete) Password: df123456 (2 of 91 complete)
+ACCOUNT CHECK: [ssh] Host: 192.168.1.107 (1 of 1, 0 complete) User: root (1 of 1, 0 complete) Password: DF123456df (3 of 91 complete)
+ACCOUNT CHECK: [ssh] Host: 192.168.1.107 (1 of 1, 0 complete) User: root (1 of 1, 0 complete) Password: df12345v* (4 of 91 complete)
+
+….
+
+
+ACCOUNT CHECK: [ssh] Host: 192.168.1.107 (1 of 1, 0 complete) User: root (1 of 1, 0 complete) Password: df2wilson34 (52 of 91 complete)
+ACCOUNT CHECK: [ssh] Host: 192.168.1.107 (1 of 1, 0 complete) User: root (1 of 1, 0 complete) Password: Admin.1617 (53 of 91 complete)
+ACCOUNT FOUND: [ssh] Host: 192.168.1.107 User: root Password: Admin.1617 [SUCCESS]
+
+Aunque la salida del comando no ha registrado el tiempo empleado en la ejecución, éste supero el minuto, siendo notablemente más lento que los anteriores.
+
+
+DETECCIÓN CON SNORT
+
+Una vez se han conocido las herramientas que se utilizarán para realizar el ataque de fuerza bruta es necesario configurar SNORT para detectarlo. Para ello, se recurre al sistema de reglas que posee snort y se añade la siguiente regla, cuyos campos se explican a continuación:
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 22 (msg:"Potencial ataque brute force contra el puerto ssh"; flags:S; threshold: type threshold, track by_src, count 5, seconds 120; flowbits: set, ssh.brute.attempt; classtype:attempted-dos; sid:2001219; rev:8;)
+
+Se registrará una alerta ante la entrada de un determinado número de paquetes tcp procedente de cualquier puerto y con destino el puerto 22. Dichos paquetes han de tener el bit de sincronismo (SYN) activado y proceder de un determinado origen. Ante la llegada del paquete número 6 en 120 segundos, una alerta quedará registrada.
+
+06/12-16:48:24.370214  [**] [1:2001219:8] Potencial ataque brute force contra el puerto ssh [**] [Classification: Attempted Denial of Service] [Priority: 2] {TCP} 192.168.1.104:57809 -> 192.168.1.107:22
+06/12-16:48:24.378220  [**] [1:2001219:8] Potencial ataque brute force contra el puerto ssh [**] [Classification: Attempted Denial of Service] [Priority: 2] {TCP} 192.168.1.104:55428 -> 192.168.1.107:22
+06/12-16:48:24.381768  [**] [1:2001219:8] Potencial ataque brute force contra el puerto ssh [**] [Classification: Attempted Denial of Service] [Priority: 2] {TCP} 192.168.1.104:37179 -> 192.168.1.107:22
+
+Efectivamente, todos los ataques realizados con las distintas herramientas han quedado registrados.
+
+DETECCIÓN CON SURICATA
+	Como se ha visto anteriormente, Suricata consta de un sistema de detección basado en reglas. En este caso, como ya se incluido las reglas (local.rules) en el fichero de configuración principal (suricata.yaml), basta con añadir la regla correspondiente para este ataque, muy similar a la de snort.
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 22 (msg:"SSH brute force attack"; flags:S;flow:to_server; threshold: type threshold, track by_src, count 5,  seconds 60; flowbits: set, ssh.brute.attempt; classtype:attempted-admin; sid:2; rev:2;)
+
+La única diferencia con respecto al anterior es el campo flow, en el que se especifica en este caso el sentido del tráfico, hacia el servidor.
+Se puede comprobar que efectivamente el ataque es detectado leyendo el log de suricata, /var/log/suricata/fast.log:
+
+07/09/2017-16:14:22.315508  [**] [1:2:2] SSH brute force attack [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 192.168.1.104:60478 -> 192.168.1.107:22
+07/09/2017-16:14:22.315508  [**] [1:2001219:20] ET SCAN Potential SSH Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.1.104:60478 -> 192.168.1.107:22
+07/09/2017-16:14:22.316087  [**] [1:2:2] SSH brute force attack [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 192.168.1.104:53358 -> 192.168.1.107:22
+07/09/2017-16:14:27.406369  [**] [1:2:2] SSH brute force attack [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 192.168.1.104:37406 -> 192.168.1.107:22
+07/09/2017-16:14:35.201756  [**] [1:2:2] SSH brute force attack [**] [Classification: Attempted Administrator Privilege Gain] [Priority: 1] {TCP} 192.168.1.104:46622 -> 192.168.1.107:22
+
+ATAQUE DE DENEGACIÓN DE SERVICIO 
+Un ataque DOS (Denial of Service) de denegación de servicio consiste en el envío masivo de tráfico hacia un servidor (o servidores) de manera que se sature y colapse, siendo incapaz de seguir ofreciendo su servicios o recursos a los clientes. Existen diversas formas de llevar a cabo este ataque, aunque en este caso se ha experimentado con las conocidas como synflood y ping flood. 
+Para realizar esta prueba se ha instalado un servidor web de tipo apache en la máquina víctima que se encuentra escuchando en el puerto por defecto, es decir el 80. Además, para que algunas de las opciones de red del kernel de la máquina no lo prevengan. El bit de tcp_syncookies (/proc/sys/net/ipv4/tcp_syncookie) ha de estar a 0 y el buffer   (/proc/sys/net/ipv4/tcp_max_syn_backlog) para recibir paquetes no puede ser muy grande (un posible valor sería 512). 
+Synflood
+Se trata de un ataque DOS dirigido contra servidores web. Tal y como su nombre indica, este ataque consiste en inundar al objetivo mediante el envío de paquetes TCP Syn dirigidos al puerto 80 de la máquina. Para realizar este tipo de ataque se emplea Metasploit, un software muy extendido y popular, diseñado para realizar pen-testing (test de penetración) y detectar vulnerabilidades en los sistemas. Presenta dos versiones, una gratuita y otra con opciones adicionales, de pago.
+Consta de una serie de módulos auxiliares que permiten probar la seguridad de un sistema ante distintos ataques.
+Una vez esté arrancado el programa Metasploit Framework y esté disponible la interfaz de comandos, se ha de cargar el módulo correspondiente:
+
+	msf> use auxiliary/dos/tcp/synflood
+
+A continuación se especifican ciertos parámetros para llevar a cabo el ataque, como el host destino (RHOST) o el número máximo de paquetes a enviar (NUM), correspondiendo 0 a un número ilimitado.
+
+	auxiliary(synflood) > set RHOST 192.168.1.107
+	auxiliary(synflood) > set NUM 0
+
+Para lanzar el ataque basta con ejecutar la directiva “exploit”.
+
+Se puede comprobar fácilmente si el ataque ha tenido éxito. Basta con escribir la dirección IP de la máquina atacada en cualquier navegador y comprobar que no se muestra la página y, en cambio, aparece un error de timeout. 
+
+DETECCIÓN CON SNORT
+	Al igual que ocurría ante el ataque de fuerza bruta contra el puerto ssh, en este caso también se recurrirá a reglas para detectarlo. Además, también se fijará un umbral a partir del cual comenzarán a resgistrarse las alertas. La regla empleada es la siguiente:
+
+alert tcp $EXTERNAL_NET any -> $HOME_NET 80 (msg:"Potencial ataque DOS contra el servidor web"; flags:S; flow: stateless; threshold: type threshold, track by_dst, count 20, seconds 60; sid:10001;rev:1;)
+
+Si comparamos esta regla con la anterior, podemos observar que se ha aumentado el número de paquetes que han de recibirse para que el sistema considere que se está produciendo un ataque de tipo DOS. Esto se debe a que este ataque genera un número de paquetes muy elevado y este valor es suficiente para detectarlo sin producir falsos positivos. Por otro lado, también cabe mencionar que los paquetes ahora tienen como destino el puerto 80.
+
+Las alertas generadas ante la detección de este ataque son las siguientes:
+
+06/14-18:57:22.992355  [**] [1:10001:1] Potencial ataque DOS contra el servidor web [**] [Priority: 0] {TCP} 192.168.1.104:36094 -> 192.168.1.107:80
+06/14-18:57:22.999279  [**] [1:10001:1] Potencial ataque DOS contra el servidor web [**] [Priority: 0] {TCP} 192.168.1.104:54091 -> 192.168.1.107:80
+06/14-18:57:23.024176  [**] [1:10001:1] Potencial ataque DOS contra el servidor web [**] [Priority: 0] {TCP} 192.168.1.104:45975 -> 192.168.1.107:80
+06/14-18:57:23.056380  [**] [1:10001:1] Potencial ataque DOS contra el servidor web [**] [Priority: 0] {TCP} 192.168.1.104:58241 -> 192.168.1.107:80
+06/14-18:57:23.056459  [**] [1:10001:1] Potencial ataque DOS contra el servidor web [**] [Priority: 0] {TCP} 192.168.1.104:54382 -> 192.168.1.107:80
+06/14-18:57:23.120491  [**] [1:10001:1] Potencial ataque DOS contra el servidor web [**] [Priority: 0] {TCP} 192.168.1.104:34845 -> 192.168.1.107:80
+
+
+
+
+ATAQUE DOS DE INUNDACIÓN DEL ENLACE MEDIANTE PING
+
+	Este ataque consiste en la inundación del enlace mediante el envío masivo de paquetes ICMP echo ping request. Para realizar este tipo de ataque no es necesario recurrir a ningún tipo de aplicación específica, sino que se puede emplear la utilidad ping, empleada generalmente para descubrir si un host está activo. Entre sus opciones, se encuentra la de flooding que permite enviar a una tasa muy elevada peticiones ICMP. Si además se aumenta el tamaño del paquete, aumentará también el  ancho de banda empleado, y es que cuanto mayor sea la tasa a la que envía la máquina atacante, más rápido quedará saturado el enlace de la máquina víctima.
+
+	Se han realizado algunos ataques de prueba desde una máquina con una conexión cableada con una tasa de 27.07 Mbps de bajada y 10.54 Mbps de subida, hacia una máquina con conexión inalámbrica de 1.21 Mbps de bajada y 0.52 Mbps de subida. (Ambos tests se han realizado con la herramienta speedtest-cli). Se lanza el ataque con el siguiente comando:
+
+ping -f -s 65500 192.168.1.107
+
+
+	Efectivamente, se puede comprobar como la máquina afectada queda colapsada muy rápidamente, siendo imposible el acceso a Internet.
+
+
+DETECCIÓN CON SNORT
+	Para detectar este ataque se añade una nueva regla al fichero local.rules dirigida a detectar este tipo de tráfico 
+
+alert icmp $EXTERNAL_NET any -> $HOME_NET any (msg:"Potencial ataque de inundacion del enlace"; threshold: type threshold, track by_dst,count 5, seconds 120; classtype:attempted-dos; sid:10002;rev:2;)
+
+Se trata de una regla muy similar a las vistas anteriormente, que también determina la activación de una alerta mediante la determinación de un umbral. 
+
+
+
+Es posible ver el registro de alertas:
+07/20-18:18:52.105177  [**] [1:10002:2] Potencial ataque de inundacion del enlace [**] [Classification: Attempted Denial of Service] [Priority: 2] {ICMP} 192.168.1.102 -> 192.168.1.107
+ 07/20-18:18:52.091097  [**] [1:10002:2] Potencial ataque de inundacion del enlace [**] [Classification: Attempted Denial of Service] [Priority: 2] {ICMP} 192.168.1.102 -> 192.168.1.107
+07/20-18:18:52.076538  [**] [1:10002:2] Potencial ataque de inundacion del enlace [**] [Classification: Attempted Denial of Service] [Priority: 2] {ICMP} 192.168.1.102 -> 192.168.1.107
+07/20-18:18:52.055221  [**] [1:10002:2] Potencial ataque de inundacion del enlace [**] [Classification: Attempted Denial of Service] [Priority: 2] {ICMP} 192.168.1.102 -> 192.168.1.107
+07/20-18:18:52.033063  [**] [1:10002:2] Potencial ataque de inundacion del enlace [**] [Classification: Attempted Denial of Service] [Priority: 2] {ICMP} 192.168.1.102 -> 192.168.1.107
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VIRTUALIZACIÓN DE REDES
+
+KVM (Kernel Virtual Machine)
+
+KVM permite la virtualización en hardware (arquitecturas de 64-bits), contando con extensiones de virtualización para procesadores de Intel y AMD. Consta de un módulo del kernel de Linux (kvm.ko) que puede cargarse, siendo una solución muy rápida, comparada con las alternativas (VirtualBox o VMWare).
+Conjuntamente con kvm, otra de las tecnologías empleadas es QEMU, que puede funcionar tanto como emulador, como virtualizador. Como virtualizador QEMU se encarga de ejecutar el código de la máquina guest en la CPU del host, lo que proporciona un elevado rendimiento.
+
+Por otro lado, además de estas tecnologías, es necesario instalar libvirt (The virtualization API) que engloba una serie de utilidades y aplicaciones compatibles con numerosas tecnologías de virtualización, permitiendo entre otras cosas la gestión y administración de máquinas virtuales.
+
+[7]
+Instalación de kvm 
+En primer lugar es necesario comprobar que el procesador soporta aceleración hardware. Basta con ejecutar el siguiente comando:
+
+$ egrep -c '(vmx|svm)' /proc/cpuinfo 
+
+Y observar que a la salida se obtiene un valor mayor o igual a 1. En este caso se obtiene 4.
+Además de estar soportada, la opción ha de estar habilitada. Puede comprobarse ejecutando:
+
+nostromo ~ # kvm-ok 
+INFO: /dev/kvm exists 
+KVM acceleration can be used
+
+Efectivamente puede instalarse ya KVM. 
+Instalación de los paquetes necesarios:
+
+nostromo ~ # apt install qemu-kvm libvirt-bin bridge-utils 
+
+A continuación es necesario que el usuario pertenezca a los grupos kvm y libvirtd para que pueda acceder a los ficheros correspondientes
+
+nostromo ~ # adduser helena kvm
+nostromo ~ # adduser helena libvirtd
+
+Una vez podemos ver que ambos grupos se encuentran entre los grupos del usuario es posible comprobar si la instalación se ha completado exitosamente:
+
+helena@nostromo ~ $ virsh -c qemu:///system list 
+ Id    Nombre                         Estado 
+---------------------------------------------------- 
+
+
+[8]
+
+
+Gestión de máquinas virtuales con virt-manager
+Para la creación de máquinas virtuales se hace uso de la aplicación gráfica virt-manager, desde la que resulta sencillo gestionar redes virtuales, dispositivos de almacenamiento y dominios.
+
+Listado de máquinas virtuales 
+$virsh list –all
+
+nostromo imagenes # virsh list --all 
+ Id    Nombre                         Estado 
+---------------------------------------------------- 
+ -     Attacker                       apagado 
+ -     CentosBckUp                    apagado 
+ -     CentosTest                     apagado 
+-     CentosTest-clone               apagado 
+
+Una vez se ha creado una máquina virtual e instalado el sistema operativo resulta posible clonarla para lanzar nuevas máquinas sin tener que repetir el proceso. De hecho a partir de esta máquina se creará un template o modelo que se empleará más adelante para lanzar máquinas con una configuración personalizada.
+
+Clonar VM
+nostromo imagenes # virt-clone --original CentosTest --name CentosBckUp --auto-clone 
+Asignando «imgPrueba-clone-1.qcow2»                                                                         |  10 GB    
+
+La opción auto-clone gestiona automáticamente la copia de los discos de la máquina original, de manera que se crea la nueva imagen imgPrueba-clone-1.qcow2 
+
+A partir de la imagen CentosTest se utilizará virt-sysprep para configurar la  imagen template con las opciones deseadas.
+
+
+Creación de un template 
+virsh dumpxml CentosTest > /home/helena/kvm/imagenes/template.xml
+
+Copiar el disco
+cp /home/helena/kvm/imagenes/CentosTest.qcow2  /home/helena/kvm/imagenes/template.qcow2
+Modificar el atributo source para que apunte al disco que se ha copiado template.qcow2
+nano template.xml
+
+Creación de una nueva máquina virtual con el comando clone
+virt-clone –original-xml template.xml –name newVm –path newVm.qcow2
+
+Para la modificación y creación de máquinas virtuales se ha creado el grupo kvmGrp en el que esta incluido el usuario administrador y un usuario sin privilegios
+
+
+Empleo de virt-customize para crear una máquina con la configuración deseada:
+- Configuración de red:
+	Dirección IP fija 
+	Dirección MAC
+- Configuración de usuarios
+	user 
+	admin
+- Instalacion de paquetes
+
+
+REFERENCIAS
+[1] Kemmerer, R. A., & Vigna, G. (April 01, 2002). Intrusion detection: a brief history and overview. Computer, 35, 4, 27.
+[2] Stallings, W., & Chandavarkar, B. R. (2014). Network security essentials. [electronic 
+resource] : applications and standards. Boston : Pearson, [2014]
+[3] Syngress, Amon, C., & Shimonski, R. J. (2003). The best damn firewall book period. Retrieved from https://ebookcentral-proquest-com.proxy.lnu.se
+[4] Syngress, Foster, J. C., & Posluns, J. (2003). Snort intrusion detection 2.0. Retrieved from https://ebookcentral-proquest-com.proxy.lnu.se
+[3] Pale, P. (2012). Nmap 6 Network exploration and security auditing Cookbook. Birmingham: Packt Publishing.
+[4] https://www.thc.org/blob/manhydra/thc_hydra_article_r3.pdf
+[5] https://nmap.org/ncrack/man.html
+[6] http://foofus.net/goons/jmk/medusa/medusa.html
+[7]	https://www.linuxito.com/gnu-linux/nivel-alto/316-virtualizacion-con-kvm-en-linux-como-compilar-e-instalar-qemu-libvirt-virt-manager-desde-los-fuentes
+[8] https://community.linuxmint.com/tutorial/view/1727
