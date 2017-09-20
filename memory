@@ -84,6 +84,29 @@ Las reglas constan de dos partes:
 
 SURICATA
 
+INSTALACIÓN SNORT
+Para la instalación de Snort en la máquina virtual con sistema operativo CentOS 7, en primer lugar se ha configurado dicha máquina para que haga uso del repositorio EPEL (Fedora Extra Packages For Enterprise Linux) que incluye software que no se encuentra en el repositorio oficial de Centos.
+
+yum install epel-release
+
+Una vez hecho esto es posible descargar e instalar los paquetes necesarios de SNORT:
+
+yum install https://www.snort.org/downloads/snort/daq-2.0.6-1.centos7.x86_64.rpm
+
+yum install https://www.snort.org/downloads/snort/snort-2.9.9.0-1.centos7.x86_64.rpm
+
+Finalizada la instalación, es posible descargarse algunas reglas desde la página oficial:
+wget https://www.snort.org/downloads/community/community-rules.tar.gz -O community-rules.tar.gz
+
+Y extraerlas en el correspondiente directorio de configuración:
+
+tar xvfz community.tar.gz -C /etc/snort/rules
+
+Comprobación
+Una vez completada la instalación es posible ejecutar snort mediante el siguiete comando:
+snort -c /etc/snort/snort.conf
+
+Es posible que se produzcan errores derivados de la ausencia de ficheros auxiliares de configuración. Para solucionarlo, basta con comentar las respectivas líneas del fichero de configuración que se refieren a ellos.
 
 
 Ataques frecuentes 
