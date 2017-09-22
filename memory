@@ -547,6 +547,22 @@ Empleo de virt-customize para crear una máquina con la configuración deseada:
 - Instalacion de paquetes
 
 
+CONFIGURACIÓN DEL ENTORNO VIRTUAL
+
+Una vez instalados los paquetes necesarios, es posible la creación del entorno virtual donde se llevarán a cabo las simulaciones. En primer lugar se crean sendos pools o espacios de almacenamiento (inside, que alojará las máquinas de lo que representará la red interna de una empresa u otro organismo, y outside, donde se ubicará la máquina externa desde la que se realizarán los ataques). A continuación se crean las dos redes, insideNetwork y outsideNetwork con las direcciones de red 192.168.100.0/24 y 192.168.200.0/24, respectivamente. En ambos casos la asignación de direcciones IP se hará forma dinámica  mediante dhcp.
+
+Tras la creación de estos elementos se lleva a cabo la creación de las máquinas virtuales. Para ello se han utilizado las imágenes de los siguientes sistemas operativos:
+	- CentOS-7-x86_64-DVD-1708.iso
+	- kali-linux-2017.2-amd64.iso
+
+Además se han creado sendas imágenes para simular los discos duros de las máquinas (snortVM.qcow2 y kali.qcow2), mediante el siguiente comando:
+	- qemu-img create -f qcow2 nombreImgen.qcow2 tamaño G
+	
+El formato elegido para la imagen,qcow2 (Qemu Copy On Write 2) presenta como características un aprovechamiento óptimo del espacio del disco físico, pues únicamente ocupa el espacio que está siendo utilizado. Además, permite la realización de snapshots o instantáneas.
+
+Tras la instalación del sistema operativo en ambas máquinas se procede a configurar la máquina de snort con dirección IP stática. Para ello, resulta necesario editar los siguientes ficheros:
+
+
 REFERENCIAS
 [1] Kemmerer, R. A., & Vigna, G. (April 01, 2002). Intrusion detection: a brief history and overview. Computer, 35, 4, 27.
 [2] Stallings, W., & Chandavarkar, B. R. (2014). Network security essentials. [electronic 
