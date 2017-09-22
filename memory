@@ -561,7 +561,42 @@ Además se han creado sendas imágenes para simular los discos duros de las máq
 El formato elegido para la imagen,qcow2 (Qemu Copy On Write 2) presenta como características un aprovechamiento óptimo del espacio del disco físico, pues únicamente ocupa el espacio que está siendo utilizado. Además, permite la realización de snapshots o instantáneas.
 
 Tras la instalación del sistema operativo en ambas máquinas se procede a configurar la máquina de snort con dirección IP stática. Para ello, resulta necesario editar los siguientes ficheros:
+-/etc/sysconfig/network-scripts/ifcfg-eth0
+	BOOTPROTO="static"
+	IPADDR=192.168.100.135
+	NETMASK=255.255.255.0
+  	DNS1=192.168.100.1
+	DNS2=8.8.8.8
+ También es necesario añadir en este apartado los servidores de nombre de dominio:
+- /etc/sysconfig/network
+	NETWORKING=yes
+	HOSTNAME=snortVM
+	GATEWAY=192.168.100.1
+	
+Modificando este último fichero configuramos una ruta por defecto para tener conectividad. (Esta conectividad se consigue gracias al NAT establecido entre la máquina virtual y el host).
+Para que esta dirección IP no figure en el rango de direcciones asignado mediante DHCP en la red insideNetwork, modificamos su esquema mediante la siguiente utilidad: virsh net-edit.
+virsh net-edit insideNetwork permite eligir el editor de texto que se desea utilizar. En este caso nano. Para modificar el rango de direcciones IP asignadas basta con editor el siguiente apartado del fichero xml, de manera que la primera dirección sea la siguiente a la asignada státicamente.
+También es posible asociar la MAC de la máquina virtual con la dirección IP deseada, de manera que un host determinado siempre reciba la misma IP.
 
+	<dhcp>
+      		<range start='192.168.100.136' end='192.168.100.254'/>
+		<host mac='52:54:00:0c:db:05' name='snortVM' ip='192.168.100.135'/>
+	</dhcp>
+	
+Para conocer la MAC de una máquina virtual, basta con observar su modelo xml con el comando virsh dumpxml vm y extraer de la interfaz de red el atributo mac.
+
+	
+COMPROBACIÓN CONECTIVIDAD ENTRE LAS MÁQUINAS
+Se comprueba mediante la herramienta ping la conectividad entre las máquinas:
+	- host y snortVM
+	- host y attacker
+	- attacker y snort
+
+Al realizar la última comprobación, se observa que no se recibe la respuesta espera, sino un DESTINATION PORT UNRECHEABLE procedente del gateway por defecto. Resolución del problema:
+- Verificar que la ruta por defecto es correcta.
+	- Se puede ver con el comando ip r que, en efecto, la ruta por defecto es correcta. Además, la respuesta recibida 	procede del gateway, por lo que el problema no se encuentra ahí.
+- Estado del firewall
+	- Comprobar que el cortafuegos no se encuentra bloqueando los mensajes ICMP. Para ello se puede utilizar el comando 	systemctl status firewall.d 
 
 REFERENCIAS
 [1] Kemmerer, R. A., & Vigna, G. (April 01, 2002). Intrusion detection: a brief history and overview. Computer, 35, 4, 27.
