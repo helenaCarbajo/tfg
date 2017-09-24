@@ -596,7 +596,19 @@ Al realizar la última comprobación, se observa que no se recibe la respuesta e
 - Verificar que la ruta por defecto es correcta.
 	- Se puede ver con el comando ip r que, en efecto, la ruta por defecto es correcta. Además, la respuesta recibida 	procede del gateway, por lo que el problema no se encuentra ahí.
 - Estado del firewall
-	- Comprobar que el cortafuegos no se encuentra bloqueando los mensajes ICMP. Para ello se puede utilizar el comando 	systemctl status firewall.d 
+	- Comprobar que el cortafuegos de ambas máquinas no se encuentra bloqueando los mensajes ICMP. Para ello se puede utilizar el comando systemctl status firewall.d. Se observa que está deshablilitado e inactivo.
+	- Finalmente se realiza una captura del tráfico de la red con la herramienta tcpdump para determinar en qué punto de la transmisión se pierden los paquetes. Se observa que los paquetes salen la máquina virtual attacker y se dirigen hacia la interfaz virtual creada para conectar la red outsideNetwork con el host. También estos paquetes alcanzan la interfaz virtual del host que conecta con la red insideNetwork. No obstante, estos paquetes no llegan a la máquina virtual snortVM. De este hecho se deduce que el problema reside en el enrutado entre las interfaces virtuales en el host. Al mostrar las reglas del firewall del host, efectivamente se comprueba que en la tabla FORWARD se han configurado una serie de reglas que rechazan el tráfico a que no procede de la red insideNetwork.
+	
+Creación de un scritp para la resolución del problema
+En base a que el problema se encuentra en las reglas que rechazan los paquetes que no proceden de la red insideNetwork y evitan que se tengan en consideración las reglas que configuran el enrutado para la red outsideNetwork, se eliminan dichas reglas de la siguiente manera.
+Se guarda en el contenido de la tabla en el fichero iptables.txt
+iptables-save > /home/helena/Tfg/Files/iptables.txt
+Edición y eliminación de las reglas que rechazan paquetes del fichero de texto 
+Creación del script ipt_setup.sh que establece la configuración del firewall deseada. Debido a que este script ejecuta el comando iptables-restore y dicho comando ha de ejecutarse con permisos de administrador también ha de editarse el fichero /etc/sudoers añadiendo la siguiente línea.
+
+helena	ALL=(ALL) NOPASSWD: /sbin/iptables-restore
+
+
 
 REFERENCIAS
 [1] Kemmerer, R. A., & Vigna, G. (April 01, 2002). Intrusion detection: a brief history and overview. Computer, 35, 4, 27.
