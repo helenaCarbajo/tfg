@@ -609,6 +609,59 @@ Creación del script ipt_setup.sh que establece la configuración del firewall d
 helena	ALL=(ALL) NOPASSWD: /sbin/iptables-restore
 
 
+CONFIGURACIÓN LOGGING REMOTO EN EL HOST FÍSICO
+[Falta motivación]
+
+Para registrar los logs procedentes de snort en la máquina física se ha empleado el servicio rsyslog, tanto en la máquina snortVM, que hará las veces de cliente, como en el host, considerado en este caso el servidor. 
+Configuración de la máquina cliente
+En primer lugar se comprueba que el paquete rsyslog está instalado y se habilita mediante el siguiente comando:
+systemctl enable rsyslog
+
+Se puede comprobar que efectivamente el servicio está activo con el comando systemctl status rsyslog.
+La secuencia seguida para registrar los logs ha sido la siguiente:
+Desde la aplicación de snort se enviarán los mensajes al servicio rsyslog, mediante el plugin de la salida syslog. Es posible configurarlo en el fichero de configuración /etc/snort/snort.conf.
+
+# syslog
+ output alert_syslog: LOG_LOCAL0 LOG_ALERT LOG_NDELAY
+
+La línea anterior determina que las alarmas generadas en snort se registren en la facilidad log_local0, sin retardo. El hecho de elegir la facilidad log_local0 se debe a que facilita discriminar los mensajes que serán enviados posteriormente al servidor.
+
+Para configurar el cliente de rsyslog basta con editar el fichero /etc/rsyslog.conf, añadiendo las siguientes líneas:
+local0.*						/var/log/snort.log
+local0.*						@192.168.0.15:514
+
+La primera línea determina que cualquier log procedente de la facilidad local0 se guarde en el sistema de ficheros local, en el fichero /var/log/snort.log. Por otro, lado la siguiente línea especifica el host al que serán enviados dichos logs, mediante el protocolo UDP (se ha empleado una única "@") al puerto 514. 
+Una vez se ha editado el fichero de configuración es necesario reiniciar el servicio (systemctl restart rsyslog).
+
+Configuración del servidor 
+Al igual que en el caso del cliente es necesario que el servicio rsyslog esté habilitado y activo. No obstante, la configuracion en este caso es distinta, pues ha de estar escuchando en el puerto 514 la llegada de posibles mensajes:
+
+# provides UDP syslog reception
+module(load="imudp")
+input(type="imudp" port="514")
+
+# provides TCP syslog reception
+module(load="imtcp")
+input(type="imtcp" port="514")
+
+Estas 4 líneas que se encuentran comentadas por defecto, permiten que el servicio rsyslog reciba logs desde distintos hosts. En este caso se han habilitado tanto UDP como TCP. También es necesario permitir el acceso a estos puertos a través del firewall:
+iptables -I INPUT -p tcp --dport 514 -j ACCEPT
+iptables -I INPUT -p udp --dport 514 -j ACCEPT
+
+Además también se ha configurado un template dinámico, de manera, que los logs se guarden en diferentes directorios dependiendo del host del que procedan. 
+
+###############################
+#### TEMPLATES ##############
+###############################
+
+$template SnortLogs,"/var/log/%HOSTNAME%/%PROGRAMNAME%.log" 
+*.* ?SnortLogs
+
+Reinicio del servicio rsyslog
+
+Al realizar ahora un ataque de denegación de servicio mediante la inundación del enlace, se puede observar cómo se ha generado el directorio /var/log/snortVM que contiene el fichero snort.log con todos los log procedentes de la máquina cliente.
+
+
 
 REFERENCIAS
 [1] Kemmerer, R. A., & Vigna, G. (April 01, 2002). Intrusion detection: a brief history and overview. Computer, 35, 4, 27.
