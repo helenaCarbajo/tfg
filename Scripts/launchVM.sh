@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 
 #Variables definitions
 
@@ -26,15 +26,16 @@ echo $mac
 
 #Look for IP address lease from MAC
 
+tmp=$(virsh net-dhcp-leases $net $mac)
 
-ip=$(virsh net-dhcp-leases $net $mac | awk 'NF > 0 ' )
+until [[ "$tmp" =~ $mac ]]; do
+	tmp=$(virsh net-dhcp-leases $net $mac)
+	sleep 1
+done 
 
-while [ $? -ne 0 ]
-do
-	ip=$(virsh net-dhcp-leases $net $mac)
-done
+#ip=$(virsh net-dhcp-leases $net $mac)
+ip=$(virsh net-dhcp-leases $net $mac | awk '$5 ~ "192" { print $5 }')
 
-echo $?
 
 echo $ip
 
