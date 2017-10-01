@@ -34,8 +34,17 @@ until [[ "$tmp" =~ $mac ]]; do
 done 
 
 #ip=$(virsh net-dhcp-leases $net $mac)
-ip=$(virsh net-dhcp-leases $net $mac | awk '$5 ~ "192" { print $5 }')
+#ip=$(virsh net-dhcp-leases $net $mac | awk '$5 ~ "192" { print $5 }')
 
+ip=$(virsh net-dhcp-leases $net $mac | awk '$5 ~ "192" { print $5 }' | cut -d'/' -f 1)
 
 echo $ip
+
+
+sudo iptables -t nat -A PREROUTING -s 192.168.200.1 -j DNAT --to-destination $ip
+
+echo "New rule added correctly to iptables"
+
+
+#echo $ip
 
