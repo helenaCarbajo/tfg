@@ -3,10 +3,10 @@
 #Variables definitions
 
 newVM="newVM"
-pathTemplate="/home/helena/Tfg/Development/inside/templates/centosTemplate.xml"
-pathImage="/home/helena/Tfg/Development/inside/images/newVM.qcow2"
-file="dumpedXml.xml"
-net="insideNetwork"
+pathTemplate="/home/helena/Tfg/Development/matrix/templates/centosTemplate.xml"
+pathImage="/home/helena/Tfg/Development/matrix/images/newVM.qcow2"
+file="/home/helena/Tfg/Scripts/dumpedXml.xml"
+net="matrix"
 
 #Clone machine from template
 
