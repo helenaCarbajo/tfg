@@ -36,14 +36,14 @@ class ScanLogging:
 		print message
 		if "->" not in message:
 			return
-		ipAddr = self.getIpAddress(message)
-		if self.checkAttackers(ipAddr):
+		attackerIp, targetIp = self.getIpAddress(message)
+		if self.checkAttackers(attackerIp):
 			print "El ataque ya ha sido gestionado"
 			return
 		else:
 			if self.checkNumInstances():
 				print 'Se puede lanzar una nueva maquina'
-				cmd = '/home/helena/Tfg/Scripts/launchVM.sh'
+				cmd = '/home/helena/Tfg/Scripts/launchVM.sh'+' '+ attackerIp + ' ' + targetIp
 				subprocess.call(cmd,shell=True,executable='/bin/bash')
 			else: 
 				print 'Ya hay demasiadas maquinas lanzadas'
@@ -73,10 +73,13 @@ class ScanLogging:
 
 	def getIpAddress(self,message):
 		parts = message.split("->")
-		tmp = parts[0].rstrip()
-		ip = tmp.split(" ")[3]
-		print ip
-		return ip
+		tmp1 = parts[0].rstrip()
+		tmp2 = parts[1].rstrip()
+		ip1 = tmp1.split(" ")[3]
+		ip2 = tmp2.split(" ")[1]
+		print ip1, ip2
+		return ip1, ip2
+
 
 	def checkAttackers(self,ip):
 		for attacker in self.attackers:
