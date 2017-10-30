@@ -48,6 +48,8 @@ class ScanLogging:
 			else: 
 				print 'Ya hay demasiadas maquinas lanzadas'
 				print 'Se reutilizara una maquina'
+				cmd = '/home/helena/Tfg/Scripts/addnat.sh'+' '+ attackerIp + ' ' + targetIp
+				subprocess.call(cmd,shell=True,executable='/bin/bash')
 
 	def readFile(self):
         	messages = []
