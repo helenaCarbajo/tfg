@@ -63,8 +63,6 @@ ip=$(virsh net-dhcp-leases $net $mac | awk '$5 ~ "192" { print $5 }' | cut -d'/'
 
 echo $ip
 
-sudo iptables -t nat -F PREROUTING
-
 sudo iptables -t nat -A PREROUTING -s $srcIp -j DNAT --to-destination $ip
 
 echo "New rule added correctly to iptables"

@@ -51,7 +51,7 @@ class ScanLogging:
 
 	def readFile(self):
         	messages = []
-        	with open('/var/log/snortvm/snort.log',"ab+") as fp:
+		with open('/var/log/snortvm/snort.log','r') as fp:
         		if self.filePos is None:
 				self.filePos = fp.tell() 
 			fp.seek(self.filePos)
