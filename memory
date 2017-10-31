@@ -83,6 +83,23 @@ Las reglas constan de dos partes:
 
 
 SURICATA
+	Al igual que ocurría con IDS estudiado previamente, Suricata se caracteriza por ser a su vez un sistema open source, de alto rendimiento dirigido a la detección de intrusión mediante el empleo de firmas de ataques ya conocidos. El proyecto Suricata surgió en 2009, impulsado por la OISF (Open Information Security Foundation), una organización sin ánimo de lucro fundada con el objetivo de crear los IDS e IPS de próxima generación. Esta organización que aglutina tanto desarrolladores como empresas expertas en ciberseguridad, trata de diseñar sistemas que satisfagan los requisitos que demanda la comunidad open source de seguridad.
+Características y funcionalidades
+Las principales características de Suricata son las siguientes:
+- Se comporta como un IDS y como un IPS: emplea un conjunto de reglas para identificar amenazas y ataques conocidos. Estas reglas proceden del VRT (Vulnerability Research Team) de Sourcefire y Cisco y también de Proofpoint por medio de sus Emerging Theats, estando estos últimos optimizados para suricata. [https://resources.sei.cmu.edu/asset_files/Presentation/2016_017_001_449890.pdf]
+- Presenta un elevado rendimiento gracias a su arquitectura multihilo sobre varios procesadore y núcleos que le permite analizar tráfico del orden de gigabits. También es escalable.
+- Detección automática del protocolo: Suricata es capaz de detectar qué protocolo está encapsulado en el tráfico que pasa por un puerto y procesarlo en consecuencia. Dicha característica permite establecer reglas en función del protocolo.
+- Monitorización: el soporte de capturas en formato pcap, así como el almacenamiento de todo tipo de logs y ficheros, permite un análisis sencillo, siendo Suricata un elemento más del sistema NSM (Network Security Monitoring).
+- Integración con Lua: Lua es un lenguaje de programación interpretado que permite llevar a cabo un análisis más profundo y exhaustivo que el aplican las reglas.
+
+Arquitectura de Suricata [Applied Network Security Monitoring: Collection, Detection, and Analysis]
+Suricata, de la misma manera que Snort, se trata de un sistema modular donde los módulos atravesados por los paquetes analizados varía en función del modo en que se esté ejecutando. El modo por defecto es el de detección, que es el que más recursos consume. Módulos:
+- Packet Acquisition: este módulo se encarga de capturar los paquetes procedentes de la interfaz de red y los envía al siguiente módulo para que puedan ser decodificados.
+- Decoder: En este módulo se determina el tipo de enlace (estando soportados los siguientes: LINKTYPE_LINUX_SLL,LINKTYPE_ETHERNET, LINKTYPE_PPP, LINKTYPE_RAW) y se procesan los paquetes de manera que sean compatibles con el resto de módulos.
+- Stream module: su principal cometido es identificar sesiones en el flujo de datos y reorganizar los paquetes de forma que su orden sea el correcto. Además de actuar a nivel de transporte como sobre el protocolo TCP, es capaz de tratar datos a nivel de aplicación, como por ejemplo tráfico HTTP.
+- Detection module: presenta varias tareas, de entre las que destaca la comprobación de las reglas y la generación de alertas en el caso de existan coincidencias. Las alertas son enviadas al módulo output.
+- Output module: la salida de suricata puede presentarse al usuario en diversos formatos.
+[Comparative Study and Analysis of Network Intrusion Detection Tools]
 
 INSTALACIÓN SNORT
 Para la instalación de Snort en la máquina virtual con sistema operativo CentOS 7, en primer lugar se ha configurado dicha máquina para que haga uso del repositorio EPEL (Fedora Extra Packages For Enterprise Linux) que incluye software que no se encuentra en el repositorio oficial de Centos.
