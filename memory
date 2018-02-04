@@ -690,10 +690,11 @@ Redes:
 - insideNetwork 10.10.10.0/24
 - outsideNetwork 192.168.200/24
 - matrix 192.168.10.0/24
+- management 10.10.20.0/24
 
 Máquinas:
 - Atacante (192.168.200.138) 
-- Router, con snort (3 interfaces)
+- Router, con snort (4 interfaces)
 - Target (10.10.10.145)
 
 La máquina Router reenvia todo el tráfico del exterior (eth1) hacia la máquina target (eth0) de forma transparente.
