@@ -794,7 +794,17 @@ DEVICE="eth0"
 ONBOOT="yes"
 
 
+###INSTALACIÓN DE SYSLOG-NG
+yum install syslog-ng
 
+Deshabilitación de rsyslog (disable, remove)
+Confiracion de /etc/syslog-ng/syslog-ng.conf
+Se añaden las siguientes líneas para filtrar los mensajes de snort
+destination d_snort { file("/var/log/snort/snort.log"); };
+filter f_snort  { facility(local0); };
+log { source(s_sys); filter(f_snort); destination(d_snort); };
+
+Tras reiniciar syslog-ng se puede comprobar que los mensajes siguen llegando al fichero de logs specificado
 
 
 
