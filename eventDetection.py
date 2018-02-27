@@ -18,67 +18,97 @@ import watchdog.events
 class ScanLogging:
 	'Class forwarding scanning alerts to rsyslog'
 
-	def __init__(self):
+	#filePath = '/var/log/snort/snort.log'
+	
+	def __init__(self,dir,file):
+		self.file = file
 		self.cleanEnv()
 		self.event_handler = watchdog.events.FileSystemEventHandler()
 		self.event_handler.on_modified = self.on_modified
 		self.observer = Observer()
-		self.observer.schedule(self.event_handler,path='/var/log/snortvm/', recursive=True)
+		self.observer.schedule(self.event_handler,path=dir, recursive=True)
 		self.observer.start()
 		print 'Waiting for event'
 		self.filePos = None
-		self.maxVM = 2
 		self.attackers = []
 
+
 	def on_modified(self, event):
-		print "File has been modified"
-		message = self.readFile()
-		print message
-		if "->" not in message:
+		if event.src_path != self.file:
 			return
-		attackerIp, targetIp = self.getIpAddress(message)
+		attackerIp, targetIp,empty = self.readFile()
+		if empty != None:
+			return 
 		if self.checkAttackers(attackerIp):
 			print "El ataque ya ha sido gestionado"
 			return
 		else:
-			if self.checkNumInstances():
-				print 'Se puede lanzar una nueva maquina'
-				cmd = '/home/helena/Tfg/Scripts/launchVM.sh'+' '+ attackerIp + ' ' + targetIp
-				subprocess.call(cmd,shell=True,executable='/bin/bash')
-			else: 
-				print 'Ya hay demasiadas maquinas lanzadas'
-				print 'Se reutilizara una maquina'
-				cmd = '/home/helena/Tfg/Scripts/addnat.sh'+' '+ attackerIp + ' ' + targetIp
-				subprocess.call(cmd,shell=True,executable='/bin/bash')
+			print "Se ha detectado un nuevo ataque"
+			#cmd = 'ssh helena@host /bin/bash /home/helena/Tfg/Scripts/launchVM.sh' + ' ' + attackerIp + ' ' + targetIp
+			
+			cmd = "ssh helena@host /bin/bash /home/helena/Tfg/Scripts/launchMachine.sh" + ' ' + attackerIp
+			subprocess.Popen(cmd,shell=True,executable='/bin/bash')	
+			print 'Ejecutado comando en host remoto'
+			
 
 	def readFile(self):
         	messages = []
-		with open('/var/log/snortvm/snort.log','r') as fp:
+		with open(self.file,'r') as fp:
         		if self.filePos is None:
 				self.filePos = fp.tell() 
 			fp.seek(self.filePos)
-			line = fp.readline()
-                        line = line.rstrip()
-                        self.filePos = fp.tell()
-        	return line
+			content = fp.read()
+			if content == '':
+				return None,None,1
+			ip1,ip2 = self.process_content(content)
+		        self.filePos = fp.tell()		
+		fp.close()
+        	return ip1,ip2,None
+
+	def process_content(self,content):
+		lines = content.split('\n')
+		print lines
+		ip1 = ''
+		ip2 = ''
+		for line in lines:
+			if '->' not in line:
+				continue
+			else:
+				if 'Portscan' in line:
+					cmd="systemctl restart snort"
+					subprocess.Popen(cmd,shell=True)
+				#print 'LINEA' + line
+				ip1,ip2 = self.getIpAddress(line)
+			
+		return ip1, ip2
 
 	def cleanEnv(self):
-		comm='./cleanEnv.sh'
+		if os.path.isfile(self.file):
+			comm='rm -f ' + self.file 
+			subprocess.call(comm,shell=True)
+			while os.path.isfile(self.file):
+				pass
+			print "Se ha borrado el fichero"
+		comm = 'touch ' + self.file
 		subprocess.call(comm,shell=True)
+		print "Se ha creado el fichero"
 
-	def checkNumInstances(self):
-		vms = len(os.listdir('/home/helena/Tfg/Development/matrix/images/'))
-		if vms < self.maxVM:
-			return True
-		else:
-			return False
+#	def checkNumInstances(self):
+#		vms = len(os.listdir('/home/helena/Tfg/Development/matrix/images/'))
+#		if vms < self.maxVM:
+#			return True
+#		else:
+#			return False
+
 
 	def getIpAddress(self,message):
 		parts = message.split("->")
 		tmp1 = parts[0].rstrip()
 		tmp2 = parts[1].rstrip()
-		ip1 = tmp1.split(" ")[3]
-		ip2 = tmp2.split(" ")[1]
+		tmp3 = tmp1.split(" ")
+		tmp4 = tmp2.split(" ")
+		ip1 = tmp3[len(tmp3) - 1]
+		ip2 = tmp4[1]
 		print ip1, ip2
 		return ip1, ip2
 
@@ -90,12 +120,16 @@ class ScanLogging:
 		self.attackers.append(ip)
 		print self.attackers
 		return False
+
+
 	def stop(self):
 		self.observer.stop()
 		self.observer.join()
 
 	
-scanLogger = ScanLogging()
+
+
+scanAlert = ScanLogging('/var/log/snort','/var/log/snort/snort.log')
 
 try:
 	while True:
@@ -103,6 +137,6 @@ try:
 except KeyboardInterrupt:
 	print 'Closing programme'
 
-scanLogger.stop()
+scanAlert.stop()
 
 
