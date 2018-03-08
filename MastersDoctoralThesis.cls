@@ -339,8 +339,8 @@ KOMA-script documentation for details.}]{fancyhdr}
 
 \DeclareDocumentCommand{\abstractauthorfont}{}{}
 \DeclareDocumentCommand{\abstracttitlefont}{}{}
-\newcommand{\byname}{by}
-\newcommand{\abstractname}{Abstract}
+\newcommand{\byname}{por}
+\newcommand{\abstractname}{Abstracto}
 \providecaptionname{german,ngerman,austrian,naustrian}{\byname}{von}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\byname}{by}
 \ifbool{consistentlayout}{
@@ -410,7 +410,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 
 \usepackage{xcolor}
 \colorlet{mdtRed}{red!50!black}
-\newcommand{\acknowledgementname}{Acknowledgements}
+\newcommand{\acknowledgementname}{Agradecimientos}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\acknowledgementname}{Acknowledgements} % Acknowledgement text for English countries
 \providecaptionname{german,ngerman,austrian,naustrian}{\acknowledgementname}{Danksagung} % Acknowledgement text for Germanic countries
 
@@ -436,7 +436,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 %	DECLARATION PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\newcommand{\authorshipname}{Declaration of Authorship}
+\newcommand{\authorshipname}{Declaración de autoría}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\authorshipname}{Declaration of Authorship} % Declaration of Authorship text for English countries
 \providecaptionname{german,ngerman,austrian,naustrian}{\authorshipname}{Eidesstattliche Erkl\"arung} % Declaration of Authorship text for Germanic countries
 
@@ -524,7 +524,7 @@ bookmarksopenlevel=0,
 hypertexnames=false,
 colorlinks=true,% Set to false to disable coloring links
 citecolor=magenta,% The color of citations
-linkcolor=red,% The color of references to document elements (sections, figures, etc)
+linkcolor=black,% The color of references to document elements (sections, figures, etc)
 urlcolor=mdtRed,% The color of hyperlinks (URLs)
 pdfstartview={FitV},
 unicode,

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.5)  7 MAR 2018 10:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.5)  8 MAR 2018 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1395,33 +1395,10 @@ Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
  (./main.aux
-
-! LaTeX Error: \\authorshipnameundefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 \select@language{spanish}
-                              
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 \select@language{spanish}
-                              
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 LaTeX Info: Redefining \sptext on input line 28.
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
+
 (./Introduccion.aux))
 \openout1 = `main.aux'.
 
@@ -1441,25 +1418,12 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
 LaTeX Font Info:    ... okay on input line 98.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
 LaTeX Font Info:    ... okay on input line 98.
-
-
-! LaTeX Error: \\authorshipnameundefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 \begin{document}
-                     
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 LaTeX Info: Redefining \sptext on input line 98.
 LaTeX Info: Redefining \. on input line 98.
 LaTeX Info: Redefining \% on input line 98.
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu
 File: ts1enc.dfu 2015/12/03 v1.1r UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -1686,36 +1650,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 98.
 \c__siunitx_mathtt_int=\count354
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 100.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 100.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 100.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 100.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 100.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 100.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-]
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 100.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 100.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 100.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 100.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 100.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 100.
- [2
-
-]
 1: section
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 145.
@@ -1731,7 +1666,9 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 145.
 [1
 
-]
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 151.
 Package babel Info: Redefining spanish shorthand >>
@@ -1748,7 +1685,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 ]
 --------------------
- Declaration of Authorship
+ Declaraci\IeC {\'o}n de autor\IeC {\'\i }a
 --------------------
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 152.
@@ -1762,6 +1699,11 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 152.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 152.
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--162
+
+ []
+
 1: section
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 171.
@@ -1881,33 +1823,9 @@ Package babel Info: Redefining spanish shorthand "?
  [8
 
 ] (./main.toc
-
-! LaTeX Error: \\authorshipnameundefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 \select@language {spanish}
-                              
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 LaTeX Info: Redefining \sptext on input line 3.
 LaTeX Info: Redefining \. on input line 3.
 LaTeX Info: Redefining \% on input line 3.
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ... Authorship}{\es@scroman {iii}}{section*.1}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 )
 \tf@toc=\write5
 \openout5 = `main.toc'.
@@ -1942,33 +1860,9 @@ Package babel Info: Redefining spanish shorthand "?
  [10
 
 ] (./main.lof
-
-! LaTeX Error: \\authorshipnameundefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 \select@language {spanish}
-                              
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 LaTeX Info: Redefining \sptext on input line 3.
 LaTeX Info: Redefining \. on input line 3.
 LaTeX Info: Redefining \% on input line 3.
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 \addvspace {10\p@ }
-                       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 )
 \tf@lof=\write6
 \openout6 = `main.lof'.
@@ -2003,33 +1897,9 @@ Package babel Info: Redefining spanish shorthand "?
  [12
 
 ] (./main.lot
-
-! LaTeX Error: \\authorshipnameundefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 \select@language {spanish}
-                              
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 LaTeX Info: Redefining \sptext on input line 3.
 LaTeX Info: Redefining \. on input line 3.
 LaTeX Info: Redefining \% on input line 3.
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 \addvspace {10\p@ }
-                       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 )
 \tf@lot=\write7
 \openout7 = `main.lot'.
@@ -2238,53 +2108,56 @@ Package babel Info: Redefining spanish shorthand "?
 
 LaTeX Warning: Citation 'DBIR2017' on page 2 undefined on input line 40.
 
-LaTeX Info: Redefining \sptext on input line 42.
-LaTeX Info: Redefining \. on input line 42.
-LaTeX Info: Redefining \% on input line 42.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 42.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 42.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 42.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 42.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 42.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 42.
-[2]
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 42.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 42.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 42.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 42.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 42.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 42.
- <images/userBehavior.png, id=183, 1127.21124pt x 533.995pt>
+<images/userBehavior.png, id=164, 1127.21124pt x 533.995pt>
 File: images/userBehavior.png Graphic file (type png)
 
 <use images/userBehavior.png>
-Package pdftex.def Info: images/userBehavior.png used on input line 60.
+Package pdftex.def Info: images/userBehavior.png used on input line 43.
 (pdftex.def)             Requested size: 404.02908pt x 191.39879pt.
+LaTeX Info: Redefining \sptext on input line 47.
+LaTeX Info: Redefining \. on input line 47.
+LaTeX Info: Redefining \% on input line 47.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 71.
+(babel)             in language  on input line 47.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 71.
-)
+(babel)             in language  on input line 47.
+ [2]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 48.
+LaTeX Info: Redefining \sptext on input line 56.
+LaTeX Info: Redefining \. on input line 56.
+LaTeX Info: Redefining \% on input line 56.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 56.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 56.
+ [3 <./images/userBehavior.png>])
 LaTeX Info: Redefining \sptext on input line 233.
 LaTeX Info: Redefining \. on input line 233.
 LaTeX Info: Redefining \% on input line 233.
@@ -2300,52 +2173,33 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 233.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 233.
- [3]
-LaTeX Info: Redefining \sptext on input line 233.
-LaTeX Info: Redefining \. on input line 233.
-LaTeX Info: Redefining \% on input line 233.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 233.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 233.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 233.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 233.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 233.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 233.
- [4 <./images/userBehavior.png>]
+ [4]
 
 LaTeX Warning: Empty bibliography on input line 242.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 249.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 249.
 (./main.aux
-
-! LaTeX Error: \\authorshipnameundefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.28 \select@language{spanish}
-                              
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 LaTeX Info: Redefining \sptext on input line 28.
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
-(./Introduccion.aux))
+ (./Introduccion.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 249.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 249.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CEDA059AF5C7CC19942DBD5BCEFC8C14;1726.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 3C91DD1EC137FD601BB99A640E4BEEF6;1611
+(rerunfilecheck)             After:  B2D7008FF118487F27CFCCB37D4A6610;1611.
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
@@ -2358,34 +2212,40 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  )
 (\end occurred when \iftrue on line 98 was incomplete) 
 Here is how much of TeX's memory you used:
- 30796 strings out of 493029
- 618103 string characters out of 6136235
- 722167 words of memory out of 5000000
- 34024 multiletter control sequences out of 15000+600000
+ 30793 strings out of 493029
+ 618082 string characters out of 6136235
+ 722159 words of memory out of 5000000
+ 34022 multiletter control sequences out of 15000+600000
  25608 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,20n,82p,10395b,1885s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/e
-nc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fonts/type1/public/cm-super
-/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfcc1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-fcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-rm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sfsl1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sft
-i1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/shar
-e/texmf/fonts/type1/public/cm-super/sfti2074.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sfxc1095.pfb>
-Output written on main.pdf (24 pages, 379706 bytes).
+ 58i,20n,77p,10395b,1941s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): na
+me{figure.caption.17} has been referenced but does not exist, replaced by a fix
+ed one
+
+pdfTeX warning (dest): name{subsection.16} has been referenced but does not exi
+st, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fo
+nts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts
+/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-sup
+er/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1095.pfb></us
+r/share/texmf/fonts/type1/public/cm-super/sfsl1440.pfb></usr/share/texmf/fonts/
+type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti2074.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfxc1095.pfb>
+Output written on main.pdf (22 pages, 377047 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 222 compressed objects within 3 object streams
- 43 named destinations out of 1000 (max. 500000)
- 94 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
