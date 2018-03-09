@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.5)  8 MAR 2018 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.3.5)  9 MAR 2018 13:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2157,7 +2157,11 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 56.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 56.
- [3 <./images/userBehavior.png>])
+ [3 <./images/userBehavior.png>]
+
+LaTeX Warning: Citation 'ciscoReport' on page 4 undefined on input line 59.
+
+)
 LaTeX Info: Redefining \sptext on input line 233.
 LaTeX Info: Redefining \. on input line 233.
 LaTeX Info: Redefining \% on input line 233.
@@ -2186,15 +2190,9 @@ LaTeX Info: Redefining \% on input line 28.
  (./Introduccion.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 249.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 249.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: B2D7008FF118487F27CFCCB37D4A6610;1611.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 3C91DD1EC137FD601BB99A640E4BEEF6;1611
-(rerunfilecheck)             After:  B2D7008FF118487F27CFCCB37D4A6610;1611.
 
 LaTeX Warning: There were undefined references.
 
@@ -2212,40 +2210,34 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  )
 (\end occurred when \iftrue on line 98 was incomplete) 
 Here is how much of TeX's memory you used:
- 30793 strings out of 493029
- 618082 string characters out of 6136235
+ 30791 strings out of 493029
+ 618052 string characters out of 6136235
  722159 words of memory out of 5000000
  34022 multiletter control sequences out of 15000+600000
  25608 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,20n,77p,10395b,1941s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): na
-me{figure.caption.17} has been referenced but does not exist, replaced by a fix
-ed one
-
-pdfTeX warning (dest): name{subsection.16} has been referenced but does not exi
-st, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fo
-nts/type1/public/cm-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></
-usr/share/texmf/fonts/type1/public/cm-super/sfcc1095.pfb></usr/share/texmf/font
-s/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></u
-sr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-sup
-er/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1095.pfb></us
-r/share/texmf/fonts/type1/public/cm-super/sfsl1440.pfb></usr/share/texmf/fonts/
-type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti2074.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sfxc1095.pfb>
-Output written on main.pdf (22 pages, 377047 bytes).
+{/usr/share/texmf/fonts/e
+nc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fonts/type1/public/cm-super
+/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfcc1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+fcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+rm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfsl1095.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfsl1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sft
+i1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfti2074.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfxc1095.pfb>
+Output written on main.pdf (22 pages, 378375 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 212 compressed objects within 3 object streams
- 42 named destinations out of 1000 (max. 500000)
+ 258 PDF objects out of 1000 (max. 8388607)
+ 210 compressed objects within 3 object streams
+ 40 named destinations out of 1000 (max. 500000)
  86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
