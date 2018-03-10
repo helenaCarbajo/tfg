@@ -1,0 +1,169 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{shelia}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Bos}{B.}%
+     {Herbert}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BH1}
+  \strng{fullhash}{BH1}
+  \field{sortinit}{B}
+  \field{title}{Shelia: a client-side honeypot for attack detection}
+  \verb{url}
+  \verb http://www.cs.vu.nl/%7Eherbertb/misc/shelia/
+  \endverb
+  \field{urlday}{10}
+  \field{urlmonth}{03}
+  \field{urlyear}{2018}
+\endentry
+
+\entry{ciscoReport}{report}{}
+  \name{author}{1}{}{%
+    {{}%
+     {cisco}{c.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{c1}
+  \strng{fullhash}{c1}
+  \field{sortinit}{C}
+  \field{title}{Cisco 2017 Annual Cybersecurity Report}
+  \list{institution}{1}{%
+    {Cisco Systems, Inc.}%
+  }
+  \field{type}{techreport}
+  \field{year}{2017}
+\endentry
+
+\entry{cisco}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {cisco}{c.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{c1}
+  \strng{fullhash}{c1}
+  \field{sortinit}{C}
+  \field{title}{What Is Network Security?}
+  \verb{url}
+  \verb https://www.cisco.com/c/en/us/products/security/what-is-network-securit
+  \verb y.html
+  \endverb
+\endentry
+
+\entry{secTools}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Project}{P.}%
+     {Nmap}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PN1}
+  \strng{fullhash}{PN1}
+  \field{sortinit}{P}
+  \field{title}{SecTools.Org: Top 125 Network Security Tools}
+  \verb{url}
+  \verb http://sectools.org/?sort=rank
+  \endverb
+  \field{year}{2018}
+\endentry
+
+\entry{HoneynetProject}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Riden}{R.}%
+     {Jamie}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{RJ1}
+  \strng{fullhash}{RJ1}
+  \field{sortinit}{R}
+  \field{title}{Know Your Enemy: Malicious Web Servers}
+  \verb{url}
+  \verb http://www.honeynet.org/papers/mws
+  \endverb
+  \field{year}{2008}
+\endentry
+
+\entry{Stallings2016}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Stallings}{S.}%
+     {W}{W}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Harlow, United Kingdom: Pearson Education Limited}%
+  }
+  \strng{namehash}{SW1}
+  \strng{fullhash}{SW1}
+  \field{sortinit}{S}
+  \field{title}{Network Security Essentials}
+  \field{year}{2016}
+\endentry
+
+\entry{THW}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {TheHackerWay}{T.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{T1}
+  \strng{fullhash}{T1}
+  \field{sortinit}{T}
+  \field{title}{HoneyPots Parte 1 – Kippo}
+  \verb{url}
+  \verb https://thehackerway.com/2015/03/24/honeypots-parte-1-kippo/
+  \endverb
+  \field{year}{2015}
+\endentry
+
+\entry{DBIR2017}{report}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Verizon}{V.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{V1}
+  \strng{fullhash}{V1}
+  \field{sortinit}{V}
+  \field{title}{2017 Data Breach Investigations Report}
+  \list{institution}{1}{%
+    {VerizonEnterprise}%
+  }
+  \field{type}{techreport}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

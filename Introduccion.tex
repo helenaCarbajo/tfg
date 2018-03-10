@@ -59,4 +59,31 @@ Este progreso constante en ambos partes, ha supuesto un incremento en el persona
 El informe concluye que toda organización es susceptible de sufrir un ciberataque, siendo necesaria una constante mejora en los medios de seguridad teniendo en cuenta, además, las limitaciones de presupuesto y compatibilidad, entre otras\cite{ciscoReport}
 
 \section{Búsqueda de soluciones contra los ciberataques}
-Los informes comentados anteriormente reflejan tan solo una pequeña parte del total de informes elaborados por empresas y organizaciones. Pese a que ambos han sido llevados a cabo por empresas privadas con sus propio interes y es necesario estudiarlos con una actitud crítica, sí que ponen de manifiesto la magnitud del problema que supone la seguridad en Internet. Como puede extraerse de los datos, en la red toda organización es susceptible de convertirse en víctima de un ataque y la necesidad de sistemas seguros se mantiene. 
+Los informes comentados anteriormente reflejan tan solo una pequeña parte del total de informes elaborados por empresas y organizaciones. Pese a que ambos han sido llevados a cabo por empresas privadas con sus propio interes y es necesario estudiarlos con una actitud crítica, sí que ponen de manifiesto la magnitud del problema que supone la seguridad en Internet. Como puede extraerse de los datos, en la red toda organización es susceptible de convertirse en víctima de un ataque y la necesidad de sistemas seguros se mantiene.\\ 
+Se ha discutido anteriormente cómo son y en qué consisten algunos de los ataques más frecuentes de la red, ¿pero qué soluciones existen para hacerlos frente? Se han desarrollado multitud de estándars que abarcan desde técnicas de gestión de ataques, hasta arquitecturas recomendables. Algunas de las instituciones más importantes que realizan esta tarea son el NIST(\textit{National Institue of Standards and Technology}), una agencia federal de Estados Unidos; o la ISOC (\textit{Internet Society}), que elabora RFCs(\textit{Requests For Comments})\cite{Stallings2016}. Además de estos estándares, hay diversos productos concretos que los expertos en ciberseguridad utilizan. La organización secTools proporciona una lista de las herramientas más populares\cite{secTools}
+\begin{itemize}
+	\item Wireshark: se trata de un analizador de protocolos, que permite estudiar el tráfico de red.
+	\item Metasploit: herramienta para probar y desarrollar código de \textit{exploits}.
+	\item Nessus: permite realizar escáneres.
+	\item Aircrack: utilidad para romper algoritmos de encriptación y recuperar contraseñas para los protocolos 802.11a/b/g WEP and WPA.
+	\item Snort: es un IDS(\textit{Intrusion Detection Sistem}), que tal y como su nombre indica, se emplea para detectar instrusiones.
+	\item Cain and Abel: herramienta para recuperar contraseñas en Windows.
+	\item BackTrack: distribución de Linux que engloba herramientas forenses y de seguridad.
+	\item Netcat: permite leer y escriber datos a través de conexiones TCP y UTP.
+	\item Tcpdump: al igual que Wireshark analiza el tráfico de red, pero se trata de una herramienta de línea de comandos.
+	\item John the Ripper: se utiliza para \textit{crackear} contraseñas en sistemas Unix y Mac, permitiendo detectar contraseñas débiles.
+\end{itemize}
+Como puede comprobarse, gran parte de estas herramientas son empleadas tanto para auditorías, como para perpetrar ataques, puesto que a la hora de comprobar la eficacia de cualquier sistema de seguridad, resulta fundamental ponerlo a prueba con ataques reales. Y es ahí donde entran en juego lo que se conoce como \textit{honeypots}. 
+\subsection{Honeypots}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{images/clienthoneypot.png}
+\caption{Funcionamiento de un cliente \textit{honeypot}}
+\label{fig:clienthoneypot}
+\end{figure}
+Los \textit{honeypots} son sistemas aislados en la red que actúan como señuelos de cara a posibles atacantes, evitando así que accedan a información crítica. Por este motivo, han de simular eficazmente un sistema productivo, pero carente de datos reales o sensibles, de manera que el atacante no sea consciente del engaño y tenga una falsa sensación de seguridad. Un \textit{honeypot} está diseñado con el objetivo de retener al atacante el mayor tiempo posible, siendo éste uno de sus mayores atractivos, pues permite estudiar su comportamiento. Tal y como se ha mencionado anteriormente, resulta de vital importancia entender cómo piensa y actúa un \textit{hacker} para diseñar mejores estrategias de defensa\cite{Stallings2016}. Existen diferentes tipos de \textit{honeypots}. Si se atiende a su funcionamiento y ámbito de actuación, tradicionalmente han actuado de forma pasiva en el lado del servidor, esperando intrusiones y monitorizando los ataques que se produjeran. Un ejemplo de este tipo sería \textit{Kippo}, un SSH  \textit{honeypot}, que permite levantar puertos que esperen conexiones SSH de manera que los atacantes puedan acceder al sistema e interactuar con un sistema de ficheros fictios, mientras toda esta actividad queda registrada\cite{THW}. Frente a este modelo pasivo se encuentran los clientes \textit{honeypot}, que se encuentran en el lado del cliente e investigan posibles ataques desde servidores de manera activa. Cuando se detecta una posible amenaza o intrusión, el sistema realiza una serie de peticiones para detectar servidores malignos, tal y como se ilustra en la figura \ref{fig:clienthoneypot} \cite{HoneynetProject}.     
+
+Dentro de este tipo de \textit{honeypots} se encuentra \textit{Shelia}, que emula el comportamiento de un usuario que accediese a los enlaces que incluyen los correos de spam, detectando así qué servidores suponen un peligro para la seguridad del sistema\cite{shelia}.  
+
+\subsection{La evolución hacia las honeynets}
+Partiendo del concepto de \textit{honeypot} y teniendo presente la necesidad de desarrollar sistemas económicos que confronten las limitaciones presupuestarias que existen en el ámbito de la ciberseguridad, el presente proyecto tiene por objetivo desarrollar una \textit{honeynet}, que emplee máquinas virtuales creadas dinámicamente para gestionar ataques e intrusiones. Para ello, aunará la capacidad de detección de un IDS con herramientas de virtualización, de manera que el resultado sea un sistema integrado. 
