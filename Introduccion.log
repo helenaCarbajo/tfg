@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.7)  10 MAR 2018 11:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.7)  10 MAR 2018 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3029,9 +3029,6 @@ Missing character: There is no c in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no s in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no o in font nullfont!
@@ -5206,6 +5203,8 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no √ in font nullfont!
 Missing character: There is no ° in font nullfont!
 Missing character: There is no s in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no a in font nullfont!
@@ -6580,10 +6579,8 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
+Missing character: There is no √ in font nullfont!
+Missing character: There is no ≥ in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no g in font nullfont!
@@ -7589,6 +7586,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no q in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
 Missing character: There is no , in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no n in font nullfont!
@@ -9406,6 +9404,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no p in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
+Missing character: There is no s in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -11455,138 +11454,6 @@ Missing character: There is no p in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no s in font nullfont!
-
-! LaTeX Error: Environment figure undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.78 \begin{figure}
-                   [b]
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Missing character: There is no [ in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no ] in font nullfont!
-! Undefined control sequence.
-l.80 \includegraphics
-                     [width=0.8\textwidth]{images/clienthoneypot.png}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no [ in font nullfont!
-Missing character: There is no w in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no = in font nullfont!
-Missing character: There is no 0 in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no 8 in font nullfont!
-! Missing number, treated as zero.
-<to be read again> 
-                   ]
-l.80 \includegraphics[width=0.8\textwidth]
-                                          {images/clienthoneypot.png}
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   ]
-l.80 \includegraphics[width=0.8\textwidth]
-                                          {images/clienthoneypot.png}
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-Missing character: There is no ] in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no h in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no y in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no . in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no g in font nullfont!
-
-! LaTeX Error: \caption outside float.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.81 \caption
-             {Funcionamiento de un cliente \textit{honeypot}}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Missing character: There is no F in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no c in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no e in font nullfont!
-
-! LaTeX Error: \begin{document} ended by \end{figure}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83 \end{figure}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 Missing character: There is no L in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
@@ -12157,7 +12024,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.84 ...estrategias de defensa\cite{Stallings2016}
+l.78 ...estrategias de defensa\cite{Stallings2016}
                                                   . Existen diferentes tipos...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12166,7 +12033,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Stallings2016' on page  undefined on input line 84.
+LaTeX Warning: Citation `Stallings2016' on page  undefined on input line 78.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -12527,6 +12394,8 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no c in font nullfont!
 Missing character: There is no t in font nullfont!
 Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no , in font nullfont!
@@ -12575,7 +12444,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.84 ... esta actividad queda registrada\cite{THW}
+l.78 ... esta actividad queda registrada\cite{THW}
                                                   . Frente a este modelo pas...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12584,7 +12453,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `THW' on page  undefined on input line 84.
+LaTeX Warning: Citation `THW' on page  undefined on input line 78.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
@@ -12865,7 +12734,7 @@ Missing character: There is no a in font nullfont!
 ! Undefined control sequence.
 <write> ... `fig:clienthoneypot' on page \thepage 
                                                   \space undefined\on@line .
-l.84 ...stra en la figura \ref{fig:clienthoneypot}
+l.78 ...stra en la figura \ref{fig:clienthoneypot}
                                                    \cite{HoneynetProject}.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12875,14 +12744,14 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:clienthoneypot' on page  undefined on input line 
-84.
+78.
 
 Missing character: There is no [ in font nullfont!
 \citation{HoneynetProject}
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.84 ...fig:clienthoneypot} \cite{HoneynetProject}
+l.78 ...fig:clienthoneypot} \cite{HoneynetProject}
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -12891,142 +12760,127 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `HoneynetProject' on page  undefined on input line 84.
+LaTeX Warning: Citation `HoneynetProject' on page  undefined on input line 78.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--85
+Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--79
                                                    \OT1/cmr/m/it/10 hon-
  []
 
 
-Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--85
+Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 ey-
  []
 
 
-Overfull \hbox (17.1221pt too wide) in paragraph at lines 76--85
+Overfull \hbox (17.1221pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 pots
  []
 
 
-Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--85
+Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 hon-
  []
 
 
-Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--85
+Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 ey-
  []
 
 
-Overfull \hbox (13.03323pt too wide) in paragraph at lines 76--85
-\OT1/cmr/m/it/10 pot
- []
-
-
-Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--85
-\OT1/cmr/m/it/10 hon-
- []
-
-
-Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--85
-\OT1/cmr/m/it/10 ey-
- []
-
-
-Overfull \hbox (17.1221pt too wide) in paragraph at lines 76--85
+Overfull \hbox (17.1221pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 pots
  []
 
 
-Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--85
+Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 hon-
  []
 
 
-Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--85
+Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 ey-
  []
 
 
-Overfull \hbox (13.03323pt too wide) in paragraph at lines 76--85
+Overfull \hbox (13.03323pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 pot
  []
 
 
-Overfull \hbox (28.23868pt too wide) in paragraph at lines 76--85
+Overfull \hbox (28.23868pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 hacker
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 76--85
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 76--79
 []
  []
 
 
-Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--85
+Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 hon-
  []
 
 
-Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--85
+Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 ey-
  []
 
 
-Overfull \hbox (17.1221pt too wide) in paragraph at lines 76--85
+Overfull \hbox (17.1221pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 pots
  []
 
 
-Overfull \hbox (25.57762pt too wide) in paragraph at lines 76--85
+Overfull \hbox (25.57762pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 Kippo
  []
 
 
-Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--85
+Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 hon-
  []
 
 
-Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--85
+Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 ey-
  []
 
 
-Overfull \hbox (13.03323pt too wide) in paragraph at lines 76--85
+Overfull \hbox (13.03323pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 pot
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 76--85
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 76--79
 []
  []
 
 
-Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--85
+Overfull \hbox (19.4221pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 hon-
  []
 
 
-Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--85
+Overfull \hbox (13.03322pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 ey-
  []
 
 
-Overfull \hbox (13.03323pt too wide) in paragraph at lines 76--85
+Overfull \hbox (13.03323pt too wide) in paragraph at lines 76--79
 \OT1/cmr/m/it/10 pot
  []
 
 
-Overfull \hbox (10.86105pt too wide) in paragraph at lines 76--85
+Overfull \hbox (10.86105pt too wide) in paragraph at lines 76--79
 []
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 76--85
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 76--79
 [] 
  []
 
@@ -13220,7 +13074,7 @@ Missing character: There is no [ in font nullfont!
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .
-l.86 ...para la seguridad del sistema\cite{shelia}
+l.80 ...para la seguridad del sistema\cite{shelia}
                                                   .
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13229,47 +13083,47 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `shelia' on page  undefined on input line 86.
+LaTeX Warning: Citation `shelia' on page  undefined on input line 80.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 86--87
+Overfull \hbox (20.0pt too wide) in paragraph at lines 80--81
 []
  []
 
 
-Overfull \hbox (19.4221pt too wide) in paragraph at lines 86--87
+Overfull \hbox (19.4221pt too wide) in paragraph at lines 80--81
 \OT1/cmr/m/it/10 hon-
  []
 
 
-Overfull \hbox (13.03322pt too wide) in paragraph at lines 86--87
+Overfull \hbox (13.03322pt too wide) in paragraph at lines 80--81
 \OT1/cmr/m/it/10 ey-
  []
 
 
-Overfull \hbox (17.1221pt too wide) in paragraph at lines 86--87
+Overfull \hbox (17.1221pt too wide) in paragraph at lines 80--81
 \OT1/cmr/m/it/10 pots
  []
 
 
-Overfull \hbox (18.91098pt too wide) in paragraph at lines 86--87
+Overfull \hbox (18.91098pt too wide) in paragraph at lines 80--81
 \OT1/cmr/m/it/10 She-
  []
 
 
-Overfull \hbox (10.73328pt too wide) in paragraph at lines 86--87
+Overfull \hbox (10.73328pt too wide) in paragraph at lines 80--81
 \OT1/cmr/m/it/10 lia
  []
 
 
-Overfull \hbox (5.43053pt too wide) in paragraph at lines 86--87
+Overfull \hbox (5.43053pt too wide) in paragraph at lines 80--81
 [] 
  []
 
 ! Undefined control sequence.
-l.88 \subsection
+l.82 \subsection
                 {La evoluci√≥n hacia las honeynets}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -13724,6 +13578,138 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no d in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.84 \begin{figure}
+                   [h]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.86 \includegraphics
+                     [width=0.8\textwidth]{images/clienthoneypot.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 8 in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.86 \includegraphics[width=0.8\textwidth]
+                                          {images/clienthoneypot.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.86 \includegraphics[width=0.8\textwidth]
+                                          {images/clienthoneypot.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 \caption
+             {Funcionamiento de un cliente \textit{honeypot}}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no F in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 )
 ! Emergency stop.
 <*> Introduccion.tex
@@ -13738,5 +13724,5 @@ Here is how much of TeX's memory you used:
  3658 multiletter control sequences out of 15000+600000
  4294 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 20i,2n,26p,1715b,105s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 20i,2n,26p,1717b,105s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

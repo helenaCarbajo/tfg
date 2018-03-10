@@ -91,6 +91,23 @@
   \field{year}{2018}
 \endentry
 
+\entry{Vuppala}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Rajesh Vuppala, Mohammed Farik}}{R.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{R1}
+  \strng{fullhash}{R1}
+  \field{sortinit}{R}
+  \field{title}{Intrusion Detection \& Prevention Systems - Sourcefire Snort}
+  \field{journaltitle}{INTERNATIONAL JOURNAL OF SCIENTIFIC \& TECHNOLOGY
+  RESEARCH}
+  \field{year}{2016}
+\endentry
+
 \entry{HoneynetProject}{online}{}
   \name{author}{1}{}{%
     {{}%
@@ -161,6 +178,22 @@
     {VerizonEnterprise}%
   }
   \field{type}{techreport}
+\endentry
+
+\entry{Kemmerer}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Vigna}{V.}%
+     {Kemmerer~\&}{K.~.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{VK1}
+  \strng{fullhash}{VK1}
+  \field{sortinit}{V}
+  \field{title}{Intrusion detection: a brief history and overview}
+  \field{journaltitle}{Computer}
+  \field{year}{2002}
 \endentry
 
 \lossort
