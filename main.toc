@@ -17,3 +17,7 @@
 \contentsline {chapter}{\numberline {2}Sistemas de Detecci\IeC {\'o}n de Intrusiones}{7}{chapter.22}
 \contentsline {section}{\numberline {2.1}Qu\IeC {\'e} son los IDS}{7}{section.23}
 \contentsline {subsection}{\numberline {2.1.1}Tipos de IDS}{8}{subsection.24}
+\contentsline {subsection}{\numberline {2.1.2}Caracter\IeC {\'\i }sticas de un IDS}{9}{subsection.26}
+\contentsline {section}{\numberline {2.2}Snort}{9}{section.27}
+\contentsline {subsection}{\numberline {2.2.1}Arquitectura de Snort}{10}{subsection.28}
+\contentsline {subsection}{\numberline {2.2.2}Reglas de Snort}{11}{subsection.30}

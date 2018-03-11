@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.7)  10 MAR 2018 16:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.7)  11 MAR 2018 12:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2090,7 +2090,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 39.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 39.
- <images/userBehavior.png, id=204, 1127.21124pt x 533.995pt>
+ <images/userBehavior.png, id=228, 1127.21124pt x 533.995pt>
 File: images/userBehavior.png Graphic file (type png)
 
 <use images/userBehavior.png>
@@ -2181,7 +2181,7 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 77.
 
-<images/clienthoneypot.png, id=227, 725.71124pt x 561.09625pt>
+<images/clienthoneypot.png, id=251, 725.71124pt x 561.09625pt>
 File: images/clienthoneypot.png Graphic file (type png)
 
 <use images/clienthoneypot.png>
@@ -2290,7 +2290,122 @@ Package babel Info: Redefining spanish shorthand "?
 
 
 
-])
+] <images/hids.png, id=277, 919.435pt x 589.20125pt>
+File: images/hids.png Graphic file (type png)
+ <use images/hids.png>
+Package pdftex.def Info: images/hids.png used on input line 37.
+(pdftex.def)             Requested size: 363.6237pt x 233.02412pt.
+LaTeX Info: Redefining \sptext on input line 46.
+LaTeX Info: Redefining \. on input line 46.
+LaTeX Info: Redefining \% on input line 46.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 46.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 46.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 46.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 46.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 46.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 46.
+
+[8 <./images/hids.png>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 49.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 49.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 49.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 49.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 49.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 49.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 69.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 69.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 69.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 69.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 69.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 69.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 79.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 79.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 79.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 79.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 79.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 79.
+LaTeX Info: Redefining \sptext on input line 81.
+LaTeX Info: Redefining \. on input line 81.
+LaTeX Info: Redefining \% on input line 81.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 81.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 81.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 81.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 81.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 81.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 81.
+ [9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 87.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
+LaTeX Info: Redefining \sptext on input line 94.
+LaTeX Info: Redefining \. on input line 94.
+LaTeX Info: Redefining \% on input line 94.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 94.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 94.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 94.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 94.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 94.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 94.
+ [10]
+<images/snortArch.png, id=301, 470.75874pt x 545.03625pt>
+File: images/snortArch.png Graphic file (type png)
+
+<use images/snortArch.png>
+Package pdftex.def Info: images/snortArch.png used on input line 99.
+(pdftex.def)             Requested size: 202.01454pt x 233.88698pt.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 104.
+)
 LaTeX Info: Redefining \sptext on input line 234.
 LaTeX Info: Redefining \. on input line 234.
 LaTeX Info: Redefining \% on input line 234.
@@ -2306,10 +2421,27 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 234.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 234.
- [8]
+ [11 <./images/snortArch.png>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 242.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 242.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 242.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 242.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 242.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 242.
+ [12
+
+
+]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 242.
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 Overfull \hbox (5.08403pt too wide) in paragraph at lines 243--243
@@ -2332,10 +2464,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 248.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 248.
-[9
-
-
-]
+[13]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 248.
  (./main.aux
 LaTeX Info: Redefining \sptext on input line 28.
@@ -2345,43 +2474,44 @@ LaTeX Info: Redefining \% on input line 28.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 248.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 248.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2F38253808B2AD3082EEDC3DC38B8A38;2750.
+(rerunfilecheck)             Checksum: DB2361BCB92C1AB10DC7CBAC4B85206E;3333.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  )
 (\end occurred when \iftrue on line 98 was incomplete) 
 Here is how much of TeX's memory you used:
- 30886 strings out of 493029
- 619765 string characters out of 6136234
+ 30940 strings out of 493029
+ 620638 string characters out of 6136234
  724091 words of memory out of 5000000
- 34078 multiletter control sequences out of 15000+600000
+ 34114 multiletter control sequences out of 15000+600000
  27309 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,20n,77p,10395b,1945s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,20n,77p,10395b,1951s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/e
-nc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fonts/type1/public/cm-super
-/sfbi1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-fcc1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-rm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sfsl1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfs
-l1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/shar
-e/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti
-2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share
-/texmf/fonts/type1/public/cm-super/sfxc1095.pfb>
-Output written on main.pdf (27 pages, 654401 bytes).
+nc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1
+095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1095.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx17
+28.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/t
+exmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc109
+5.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/te
+xmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/publi
+c/cm-super/sfsl1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1440.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti2074.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfxc1095.pfb>
+Output written on main.pdf (31 pages, 952287 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 309 compressed objects within 4 object streams
- 63 named destinations out of 1000 (max. 500000)
- 139 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 425 PDF objects out of 1000 (max. 8388607)
+ 360 compressed objects within 4 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 

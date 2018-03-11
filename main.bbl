@@ -73,6 +73,22 @@
   \endverb
 \endentry
 
+\entry{Syngress}{inbook}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Posluns}{P.}%
+     {Foster~\&}{F.~.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PF1}
+  \strng{fullhash}{PF1}
+  \field{sortinit}{P}
+  \field{booktitle}{Snort intrusion detection 2.0}
+  \field{title}{Snort: The Inner Workings}
+  \field{year}{2003}
+\endentry
+
 \entry{secTools}{online}{}
   \name{author}{1}{}{%
     {{}%
@@ -124,6 +140,27 @@
   \verb http://www.honeynet.org/papers/mws
   \endverb
   \field{year}{2008}
+\endentry
+
+\entry{Shimonski}{inbook}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Shinder}{S.}%
+     {Shimonski~\&}{S.~.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SS1}
+  \strng{fullhash}{SS1}
+  \field{sortinit}{S}
+  \field{booktitle}{The best damn firewall book period}
+  \field{title}{Chapter 29 Introducing Snort}
+  \field{year}{2003}
+\endentry
+
+\entry{snortman}{manual}{}
+  \field{sortinit}{S}
+  \field{title}{SNORT Users Manual}
 \endentry
 
 \entry{Stallings2016}{book}{}
